@@ -21,7 +21,7 @@ const store = {
 const DICT = { en: (window.I18N || {}).en || {}, es: (window.I18N || {}).es || {}, pt: {} };
 const DYN_PT = {
   "err.req": "Preencha este campo.", "err.email": "Informe um e-mail válido, por exemplo nome@empresa.com.",
-  "err.sel": "Selecione uma opção.", "ok.copied": "Copiado!", "f.sending": "Abrindo seu e-mail…", "wd.sp": "Santos, SP", "bl.read": "Ler artigo completo",
+  "err.sel": "Selecione uma opção.", "ok.copied": "Copiado!", "f.sending": "Abrindo seu e-mail…", "a11y.pause": "Pausar animações", "a11y.play": "Retomar animações", "wd.sp": "Santos, SP", "bl.read": "Ler artigo completo",
   "meta.desc": $("#metaDesc").getAttribute("content")
 };
 Object.assign(DICT.pt, DYN_PT);
@@ -49,6 +49,7 @@ function setLang(l) {
   });
   renderBlog();
   drawMap();
+  if (typeof applyMotion === "function") applyMotion();
   // limpa mensagens de erro (estão no idioma anterior)
   $$(".field.invalid").forEach(f => f.classList.remove("invalid"));
   $$(".err").forEach(e => { e.textContent = ""; });
@@ -171,6 +172,16 @@ if ("IntersectionObserver" in window && !reduce) {
   });
 }
 
+/* ===== Animação do topo (globo, avião, navio): ligada por padrão, com botão de pausar ===== */
+let motion = store.get("nlg-motion") !== "off";
+function applyMotion() {
+  document.documentElement.classList.toggle("hero-paused", !motion);
+  const sv = $(".hero-ship"); if (sv && sv.pauseAnimations) { motion ? sv.unpauseAnimations() : sv.pauseAnimations(); }
+  const b = $("#motionBtn"); if (b) { b.setAttribute("aria-pressed", String(!motion)); b.setAttribute("aria-label", t(motion ? "a11y.pause" : "a11y.play")); }
+  if (motion && window.nlgGlobeStart) window.nlgGlobeStart();
+}
+$("#motionBtn").addEventListener("click", () => { motion = !motion; store.set("nlg-motion", motion ? "on" : "off"); applyMotion(); });
+
 /* ===== Dados do mapa-múndi (pontos de terra em land.js) ===== */
 const D = Math.PI / 180, RAW = window.NLG_LAND || "", land = [];
 for (let i = 0; i + 6 <= RAW.length; i += 6) land.push([parseInt(RAW.substr(i, 3), 36) / 10 - 180, parseInt(RAW.substr(i + 3, 3), 36) / 10 - 90]);
@@ -229,12 +240,12 @@ function initGlobe() {
     const wide = W > 980;
     R = wide ? Math.min(W * .3, H * .46, 400) : Math.min(W * .62, H * .42, 320);
     cx = wide ? W * .74 : W * .5; cy = wide ? H * .46 : H * .62;
-    if (reduce) frame(0);
+    if (!motion) frame(performance.now());
   }
   const P = v => { const c = Math.cos(rot), s = Math.sin(rot); const x = v[0] * c + v[2] * s, z = -v[0] * s + v[2] * c, y = v[1], ct = Math.cos(tilt), st = Math.sin(tilt); return [cx + R * x, cy - R * (y * ct - z * st), y * st + z * ct]; };
   function frame(now) {
     const tt = now / 1000;
-    if (!reduce) rot += .0016;
+    if (motion) rot += .0025;
     ctx.clearRect(0, 0, W, H);
     let g = ctx.createRadialGradient(cx, cy, R * .9, cx, cy, R * 1.35); g.addColorStop(0, "rgba(70,140,255,.25)"); g.addColorStop(1, "rgba(70,140,255,0)");
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 1.35, 0, 7); ctx.fill();
@@ -252,16 +263,17 @@ function initGlobe() {
       const pp = a.pts.map(P), head = (((tt / a.dur) + a.off) % 1 + 1) % 1, tail = .28, n = pp.length - 1;
       ctx.strokeStyle = "rgba(242,140,40,.2)"; ctx.lineWidth = 1; ctx.beginPath(); let on = false;
       pp.forEach(p => { if (p[2] > -.05) { on ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); on = true; } else on = false; }); ctx.stroke();
-      if (reduce) return;
+      if (!motion) return;
       for (let i = 1; i <= n; i++) { const u = i / n; if (u > head || u < head - tail) continue; const p0 = pp[i - 1], p1 = pp[i]; if (p0[2] < -.05 || p1[2] < -.05) continue; const al = (u - (head - tail)) / tail; ctx.strokeStyle = "rgba(255," + (150 + al * 60 | 0) + ",60," + al + ")"; ctx.lineWidth = 1 + al * 2; ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke(); }
     });
-    if (!reduce && visible) requestAnimationFrame(frame); else running = false;
+    if (motion && visible) requestAnimationFrame(frame); else running = false;
   }
   let visible = true, running = false;
-  const start = () => { if (!running && !reduce) { running = true; requestAnimationFrame(frame); } };
+  const start = () => { if (!running && motion) { running = true; requestAnimationFrame(frame); } };
   if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); }).observe(hero);
   let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(size, 200); });
   size(); start();
+  window.nlgGlobeStart = start;
 }
 
 /* ===== Início ===== */
@@ -271,4 +283,5 @@ if (saved === "en" || saved === "es") setLang(saved); else renderBlog();
 drawMap();
 drawHq();
 initGlobe();
+applyMotion();
 })();

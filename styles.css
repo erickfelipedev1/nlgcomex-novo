@@ -356,3 +356,21 @@ footer li a{display:inline-block;padding:5px 0}
 @media (max-width:700px){.map-label{display:none}}
 .strip-item,.strip-lbl{min-width:0}
 .strip-lbl{overflow-wrap:anywhere}
+
+/* animação do topo: sempre ativa (pedido do cliente), com botão de pausar */
+@keyframes sail{0%{transform:translate(-26px,0)}25%{transform:translate(-10px,-5px)}50%{transform:translate(6px,0)}75%{transform:translate(20px,-5px)}100%{transform:translate(34px,0)}}
+.hero-ship .ship-body{animation:sail 14s ease-in-out infinite alternate;transform-origin:50% 100%}
+.hero-ship .wave.w1{animation:wave 9s linear infinite}
+.hero-ship .wave.w2{animation:wave 6s linear infinite reverse}
+@media (prefers-reduced-motion:reduce){
+  .hero-ship .ship-body{animation:sail 14s ease-in-out infinite alternate!important}
+  .hero-ship .wave.w1{animation:wave 9s linear infinite!important}
+  .hero-ship .wave.w2{animation:wave 6s linear infinite reverse!important}
+}
+html.hero-paused .hero-ship .ship-body,html.hero-paused .hero-ship .wave{animation-play-state:paused!important}
+.motion-btn{position:absolute;left:20px;bottom:18px;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(6,19,37,.5);color:#fff;cursor:pointer;display:grid;place-items:center}
+.motion-btn:hover{background:rgba(255,255,255,.18)}
+.motion-btn svg{width:18px;height:18px;fill:currentColor;stroke:none}
+.motion-btn .i-play{display:none}
+html.hero-paused .motion-btn .i-play{display:block}
+html.hero-paused .motion-btn .i-pause{display:none}

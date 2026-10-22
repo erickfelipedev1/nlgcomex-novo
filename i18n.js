@@ -1,6 +1,7 @@
 /* Traduções. O português vive no próprio HTML (data-i18n); aqui ficam EN e ES. */
 window.I18N = {
 en: {
+  "a11y.pause":"Pause animations","a11y.play":"Resume animations",
   "st.a.t":"Import and export",
   "st.a.d":"Ocean and air freight",
   "st.c.t":"Cargo forwarding",
@@ -83,6 +84,7 @@ en: {
   "ft.about":"Ocean freight, air freight, cargo forwarding and foreign trade solutions with attention to your operation.","ft.nav":"Navigate","ft.client":"Client area","ft.contact":"Get in touch","ft.hours":"Hours: 8am to 6pm","ft.privacy":"Privacy Policy","ft.rights":"All rights reserved."
 },
 es: {
+  "a11y.pause":"Pausar animaciones","a11y.play":"Reanudar animaciones",
   "st.a.t":"Importación y exportación",
   "st.a.d":"Flete marítimo y aéreo",
   "st.c.t":"Agenciamiento de cargas",
