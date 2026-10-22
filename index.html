@@ -334,6 +334,7 @@
       <div class="lang" role="group" aria-label="Idioma">
         <button data-lang="pt" class="active" title="Português"><svg class="flag" viewBox="0 0 28 20"><rect width="28" height="20" rx="3" fill="#009C3B"/><path d="M14 3l10 7-10 7-10-7z" fill="#FFDF00"/><circle cx="14" cy="10" r="4" fill="#002776"/></svg> PT</button>
         <button data-lang="en" title="English"><svg class="flag" viewBox="0 0 28 20"><rect width="28" height="20" rx="3" fill="#fff"/><g fill="#B22234"><rect y="0" width="28" height="1.54"/><rect y="3.08" width="28" height="1.54"/><rect y="6.16" width="28" height="1.54"/><rect y="9.24" width="28" height="1.54"/><rect y="12.32" width="28" height="1.54"/><rect y="15.4" width="28" height="1.54"/><rect y="18.46" width="28" height="1.54"/></g><rect width="12" height="10.8" fill="#3C3B6E"/></svg> EN</button>
+      <button data-lang="es" title="Español"><svg class="flag" viewBox="0 0 28 20"><rect width="28" height="20" rx="3" fill="#AA151B"/><rect y="5" width="28" height="10" fill="#F1BF00"/></svg> ES</button>
       </div>
       <a href="#contato" class="btn-quote" data-i18n="hd.quote">Solicitar cotação</a>
       <a href="#tracking" class="btn-track">NLG Tracking</a>
@@ -775,6 +776,90 @@ const EN = {
   "ft.nav":"Navigate","ft.client":"Client area","ft.contact":"Get in touch","ft.hours":"Hours: 8am to 6pm","ft.privacy":"Privacy Policy","ft.rights":"All rights reserved."
 };
 
+const ES = {
+  "nav.home":"Inicio","nav.solutions":"Soluciones","nav.about":"Sobre nosotros","nav.how":"Cómo trabajamos","nav.blog":"Blog","nav.contact":"Contacto","hd.quote":"Solicitar cotización",
+  "hero.eyebrow":"Importación, exportación y logística internacional",
+  "hero.title":"Su carga cruza fronteras. Nuestra atención acompaña <span class='hl'>cada etapa.</span>",
+  "hero.text1":"Flete marítimo, flete aéreo, agenciamiento de cargas y despacho aduanero con planificación, seguimiento cercano y claridad para que su empresa decida con más confianza.",
+  "hero.text2":"Con <b>más de 30 años de experiencia en comercio exterior</b>, entendemos su operación y coordinamos los servicios contratados con atención a lo que importa para su negocio: costos, plazos y continuidad.",
+  "hero.cta1":"Solicitar una cotización","hero.cta2":"¿Ya es cliente? Acceda a NLG Tracking.","hero.member":"Miembro","hero.global":"Operación global",
+  "stats.years":"Años de experiencia","stats.companies":"Empresas asesoradas","stats.processes":"Procesos realizados con éxito",
+  "in.eyebrow":"Presentación","in.title":"Detrás de cada carga, hay un negocio que necesita seguir adelante.",
+  "in.p1":"Una mercadería puede representar la reposición de su stock, el funcionamiento de una industria o la entrega que su cliente está esperando.",
+  "in.p2":"Por eso, nuestro trabajo comienza por entender su necesidad. Evaluamos las particularidades de la operación, orientamos los próximos pasos y acompañamos el avance del proceso.",
+  "in.p3":"Usted cuenta con un equipo cercano para aclarar dudas, comunicar novedades y apoyar decisiones a lo largo del camino.",
+  "sv.eyebrow":"Soluciones","sv.title":"Las necesidades de su operación definen nuestro trabajo.","sv.text":"Conozca las soluciones de NLG para apoyar el movimiento internacional de sus mercaderías.",
+  "sv.s1.t":"Flete marítimo internacional","sv.s1.g":"Su operación comienza con la elección de un transporte adecuado a su carga y a su negocio.",
+  "sv.s1.d":"Planificamos y coordinamos el transporte marítimo para importación y exportación, considerando las características de la mercadería, la ruta y el plazo previsto.","sv.s1.b":"Cotizar flete marítimo",
+  "sv.s2.t":"Flete aéreo internacional","sv.s2.g":"Cuando el plazo es prioridad, su carga necesita una solución acorde a la urgencia de la operación.",
+  "sv.s2.d":"Planificamos y coordinamos el transporte aéreo para importación y exportación, considerando las características de la mercadería, la disponibilidad de embarque y el destino.","sv.s2.b":"Cotizar flete aéreo",
+  "sv.s3.t":"Agenciamiento de cargas internacionales","sv.s3.g":"Conectamos las etapas del transporte con las necesidades de su negocio.",
+  "sv.s3.d":"Coordinamos la contratación y el seguimiento del transporte internacional de su carga, actuando como enlace con transportistas y socios logísticos.","sv.s3.b":"Solicitar agenciamiento de cargas",
+  "sv.s4.t":"Despacho aduanero","sv.s4.g":"Atención a los detalles para conducir una etapa esencial de su operación.",
+  "sv.s4.d":"Ofrecemos orientación documental y seguimiento de los procedimientos aduaneros de su mercadería.","sv.s4.b":"Hablar sobre despacho aduanero",
+  "sv.s5.t":"Apoyo a la importación","sv.s5.g":"Más claridad para organizar la llegada de sus mercaderías.",
+  "sv.s5.d":"Apoyamos a su empresa en la organización de las etapas de la importación, en la coordinación de las necesidades logísticas y en el seguimiento del proceso, según el alcance contratado.","sv.s5.b":"Planificar mi importación",
+  "sv.s6.t":"Apoyo a la exportación","sv.s6.g":"Planificación y seguimiento para llevar sus productos a otros mercados.",
+  "sv.s6.d":"Coordinamos las etapas contratadas para el envío de mercaderías al exterior, con atención a la documentación, al embarque y a las necesidades del destino.","sv.s6.b":"Planificar mi exportación",
+  "wd.eyebrow":"Alcance global","wd.title":"No solo China: operamos con todo el mundo",
+  "wd.text":"Con la red de socios TUIG e IATA, su carga sale y llega desde cualquier lugar del planeta.",
+  "wd.r1":"Asia","wd.r2":"Europa","wd.r3":"América del Norte","wd.r4":"América del Sur","wd.r5":"Medio Oriente","wd.r6":"África","wd.r7":"Oceanía",
+  "tr.title":"Su carga en movimiento. Usted siguiendo el camino.",
+  "tr.t1":"Con NLG Tracking, los clientes de NLG pueden consultar la ubicación de su contenedor durante el transporte marítimo.",
+  "tr.t2":"Acceda a la plataforma y siga el recorrido de su carga con más visibilidad sobre la operación.",
+  "tr.btn":"Acceder a NLG Tracking","tr.small":"Acceso para clientes NLG.",
+  "tr.s1":"Retiro","tr.s2":"Embarque","tr.s3":"En tránsito","tr.s4":"Despacho","tr.s5":"Entrega",
+  "df.eyebrow":"Diferenciales","df.title":"Usted necesita saber dónde está su operación y qué sucede después.",
+  "df.d1.t":"Más de 30 años de experiencia en comercio exterior","df.d1.d":"Conocimiento construido en la práctica para comprender las particularidades de cada operación, identificar puntos de atención y orientar a su empresa en las decisiones de importación y exportación.",
+  "df.d2.t":"Atención que conoce su contexto","df.d2.d":"Entendemos las necesidades de su empresa para ofrecer orientaciones relacionadas con su carga, sus objetivos y su rutina.",
+  "df.d3.t":"Información clara para decidir","df.d3.d":"Explicamos el alcance de la contratación, las etapas previstas y los puntos que requieren atención, ayudando a su equipo a organizarse.",
+  "df.d4.t":"Seguimiento cercano","df.d4.d":"Mantenemos a su empresa informada sobre el avance de los servicios contratados y las gestiones necesarias en cada fase.",
+  "df.d5.t":"Planificación atenta a los costos","df.d5.d":"Analizamos las alternativas de la operación considerando los servicios involucrados y sus impactos, para apoyar decisiones más conscientes.",
+  "hw.eyebrow":"Cómo trabajamos","hw.title":"Una operación bien conducida comienza con las preguntas correctas.",
+  "hw.s1.t":"Entendemos su necesidad","hw.s1.d":"Reunimos la información sobre la mercadería, el origen, el destino y el plazo previsto.",
+  "hw.s2.t":"Evaluamos las alternativas","hw.s2.d":"Analizamos los servicios necesarios y las condiciones disponibles para estructurar una propuesta acorde a su demanda.",
+  "hw.s3.t":"Acordamos lo que se hará","hw.s3.d":"Presentamos el alcance, las responsabilidades y la información necesaria para iniciar el trabajo.",
+  "hw.s4.t":"Acompañamos la ejecución","hw.s4.d":"Coordinamos las etapas contratadas y comunicamos las novedades y eventuales pendientes a lo largo del proceso.",
+  "hw.cta":"Hablar sobre mi operación",
+  "ab.eyebrow":"Sobre NLG","ab.title":"Más de 30 años de experiencia en comercio exterior. Cercanía en cada operación.",
+  "ab.p1":"NLG actúa en flete marítimo, flete aéreo, agenciamiento de cargas y despacho aduanero, apoyando a empresas en sus operaciones de importación y exportación.",
+  "ab.p2":"Son más de 30 años de experiencia en comercio exterior que dan base a nuestro trabajo y a la forma en que entendemos los desafíos de cada cliente.",
+  "ab.p3":"Nuestro trabajo une organización, atención a los detalles y relación cercana. Buscamos entender el contexto de cada empresa para conducir los servicios con responsabilidad y comunicación clara.",
+  "ab.p4":"Creemos que una alianza se construye día a día: en la orientación antes del embarque, en el seguimiento de la carga y en la atención a cada duda que surge durante el proceso.",
+  "ab.m":"Misión","ab.mt":"Ofrecer soluciones estratégicas y consultoría especializada, facilitando la vida del importador y exportador.",
+  "ab.v":"Visión","ab.vt":"Ser la mejor elección para importadores y exportadores en el servicio puerta a puerta hasta 2029.","ab.cta":"Hablar con nuestro equipo",
+  "ph.team":"[ Foto del equipo / oficina ]",
+  "members.eyebrow":"Redes internacionales","members.title":"Ahora formamos parte de las redes TUIG e IATA",
+  "members.tuig.t":"Miembro TUIG","members.tuig.d":"Red global de agentes socios en diversos países.",
+  "members.iata.t":"Miembro IATA","members.iata.d":"Acreditados para operaciones de carga aérea internacional.",
+  "ct.eyebrow":"Certificaciones","ct.title":"Calidad y cumplimiento reconocidos","ct.text":"Nuestras certificaciones garantizan seguridad y confiabilidad en cada operación.",
+  "ct.c1":"Asociación Internacional de Transporte Aéreo","ct.c2":"Red internacional de agentes de carga",
+  "bl.title":"Información para planificar mejor su próxima operación.",
+  "bl.t1":"Siga contenidos sobre flete marítimo, flete aéreo, agenciamiento de cargas, despacho aduanero, importación y exportación.",
+  "bl.t2":"Entienda las etapas del comercio exterior, aclare dudas y conozca los puntos que merecen atención en la planificación logística de su empresa.",
+  "bl.read":"Leer artículo completo","bl.btn":"Acceder al blog","bl.cta":"Hablar con nuestro equipo",
+  "bl.a1.c":"Flete internacional","bl.a1.t":"¿Flete marítimo o aéreo: cómo elegir?","bl.a1.e":"Plazo, peso, volumen y presupuesto: vea qué pesa en la elección del modal para su carga.",
+  "bl.a2.c":"Importación","bl.a2.t":"Primeros pasos para importar con más claridad","bl.a2.e":"Del proveedor a los documentos: qué organizar antes de embarcar la mercadería.",
+  "bl.a3.c":"Despacho aduanero","bl.a3.t":"Despacho aduanero: por qué importa la documentación","bl.a3.e":"Entienda la etapa en que se libera la mercadería y cómo evitar demoras por pendientes.",
+  "fq.eyebrow":"Preguntas frecuentes","fq.title":"¿Aclaramos los primeros pasos?",
+  "fq.q1":"¿Qué información necesito enviar para solicitar una cotización?","fq.a1":"Indique si la operación es de importación o exportación, el origen, el destino, la descripción de la mercadería y el plazo deseado. Si ya tiene peso, dimensiones, volumen y documentos de la carga, envíelos también. Nuestro equipo orientará sobre la información complementaria.",
+  "fq.q2":"¿Cuál es la mejor opción para mi carga: flete marítimo o aéreo?","fq.a2":"La elección depende del plazo deseado, del peso, del volumen, de las características de la mercadería y del presupuesto disponible. Nuestro equipo evalúa esta información para orientar sobre las alternativas adecuadas a su operación.",
+  "fq.q3":"¿Qué es el agenciamiento de cargas internacionales?","fq.a3":"Es el servicio que organiza y coordina el transporte internacional de mercaderías, conectando a la empresa con los transportistas y socios involucrados. Puede abarcar cotización de flete, reserva de espacio, orientación sobre documentos de transporte y seguimiento del embarque, según el alcance contratado.",
+  "fq.q4":"¿Puedo contratar solo el flete o el despacho aduanero?","fq.a4":"Cuéntele a nuestro equipo qué servicio necesita. Evaluaremos el alcance de la demanda para presentar una propuesta compatible con su operación.",
+  "fq.q5":"¿Cómo puedo seguir mi contenedor durante el transporte?","fq.a5":"Los clientes de NLG pueden acceder a NLG Tracking desde el menú del sitio para consultar la ubicación del contenedor durante el transporte marítimo. Para dudas sobre el acceso o la información de la operación, comuníquese con nuestro equipo.",
+  "fq.q6":"¿Cuánto tiempo lleva una operación?","fq.a6":"El plazo varía según la ruta, la disponibilidad de transporte, las características de la mercadería, la documentación y los procedimientos involucrados. La estimación se presenta a partir del análisis de la operación.",
+  "fq.q7":"¿Cómo saber qué servicios necesita contratar mi empresa?","fq.a7":"El primer paso es entender qué ya está definido en la negociación y qué responsabilidades corresponden a su empresa. Con esa información, nuestro equipo podrá orientar sobre el alcance necesario.",
+  "co.eyebrow":"Contacto","co.title":"¿Cuál es el próximo destino de su operación?",
+  "co.text":"Cuéntenos qué necesita importar o exportar su empresa. Entenderemos la demanda y evaluaremos las soluciones para su negocio.",
+  "co.phone":"Teléfono","co.addr":"Dirección","co.hours":"Horario de atención","co.hours.v":"De 8 a 18 h",
+  "co.wa.t":"¿Prefiere conversar directamente con nuestro equipo?","co.wa.b":"Hablar por WhatsApp",
+  "co.f.name":"Nombre","co.f.company":"Empresa","co.f.wa":"WhatsApp","co.f.sel":"Servicio de interés",
+  "co.f.o1":"Flete marítimo","co.f.o2":"Flete aéreo","co.f.o3":"Agenciamiento de cargas","co.f.o4":"Despacho aduanero","co.f.o5":"Importación","co.f.o6":"Exportación","co.f.o7":"Necesito orientación",
+  "co.f.msg":"Cuéntenos un poco sobre su operación","co.f.hint":"Si es posible, indique el origen, el destino, el tipo de mercadería y el plazo deseado.","co.f.btn":"Solicitar contacto",
+  "ft.about":"Flete marítimo, flete aéreo, agenciamiento de cargas y soluciones en comercio exterior con atención a su operación.",
+  "ft.nav":"Navegue","ft.client":"Área del cliente","ft.contact":"Contáctenos","ft.hours":"Atención: de 8 a 18 h","ft.privacy":"Política de Privacidad","ft.rights":"Todos los derechos reservados."
+};
+
 // Artigos de exemplo do blog (abrem em janela, sem sair da página)
 const ART = {
   pt:[
@@ -804,6 +889,20 @@ const ART = {
       "Customs clearance is the stage in which goods are checked and released by the responsible authorities to proceed to their destination.",
       "Incomplete or inconsistent documents are among the most common causes of pending issues and delays. Reviewing information before shipping and following the process closely helps keep deadlines and costs under control.",
       "With documentation guidance and follow-up of procedures, it is possible to spot pending issues early and conduct the release with the responsible parties."]}
+  ],
+  es:[
+    {t:"¿Flete marítimo o aéreo: cómo elegir?",b:[
+      "La elección entre el modal marítimo y el aéreo depende del plazo deseado, del peso y del volumen de la carga, de las características de la mercadería y del presupuesto disponible.",
+      "El flete aéreo suele atender mejor cargas urgentes, de alto valor o de menor volumen. El marítimo tiende a ser el indicado para volúmenes mayores, cuando el plazo permite un tránsito más largo.",
+      "Antes de decidir, conviene comparar el costo total de la operación y no solo el valor del flete. Informe a nuestro equipo el origen, el destino, el tipo de mercadería y el plazo previsto para que se evalúen las alternativas."]},
+    {t:"Primeros pasos para importar con más claridad",b:[
+      "Una importación organizada comienza antes del embarque. Algunos puntos suelen merecer atención desde el inicio:",
+      "<ul><li>Definir el producto y el proveedor, y acordar las condiciones comerciales y de entrega (Incoterm);</li><li>Entender las exigencias aplicables al producto y los costos involucrados en la operación;</li><li>Reunir los documentos de la carga, como factura comercial, lista de empaque y documento de transporte.</li></ul>",
+      "Las exigencias varían según la mercadería y la operación. Nuestro equipo orienta sobre lo que hay que gestionar, según el alcance contratado."]},
+    {t:"Despacho aduanero: por qué importa la documentación",b:[
+      "El despacho aduanero es la etapa en la que la mercadería es verificada y liberada por los organismos responsables para seguir a su destino.",
+      "Los documentos incompletos o con divergencias son una de las causas más comunes de pendientes y demoras. Por eso, revisar la información antes del embarque y seguir el proceso de cerca ayuda a mantener plazos y costos bajo control.",
+      "Con orientación documental y seguimiento de los procedimientos, es posible identificar pendientes a tiempo y conducir la liberación junto a los responsables."]}
   ]
 };
 
@@ -815,16 +914,16 @@ document.querySelectorAll("[data-i18n-ph]").forEach(el=>PT[el.dataset.i18nPh]=el
 let curLang="pt";
 function setLang(lang){
   curLang=lang;
-  const d = lang==="en" ? EN : PT;
+  const d = {pt:PT,en:EN,es:ES}[lang]||PT;
   document.querySelectorAll("[data-i18n]").forEach(el=>{ if(d[el.dataset.i18n]) el.textContent=d[el.dataset.i18n]; });
   document.querySelectorAll("[data-i18n-html]").forEach(el=>{ if(d[el.dataset.i18nHtml]) el.innerHTML=d[el.dataset.i18nHtml]; });
   document.querySelectorAll("[data-i18n-ph]").forEach(el=>{ if(d[el.dataset.i18nPh]) el.placeholder=d[el.dataset.i18nPh]; });
-  document.documentElement.lang = lang==="en" ? "en" : "pt-BR";
+  document.documentElement.lang = {pt:"pt-BR",en:"en",es:"es"}[lang]||"pt-BR";
   document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
   try{ localStorage.setItem("nlg-lang",lang); }catch(e){}
 }
 document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
-try{ const s=localStorage.getItem("nlg-lang"); if(s==="en") setLang("en"); }catch(e){}
+try{ const s=localStorage.getItem("nlg-lang"); if(s==="en"||s==="es") setLang(s); }catch(e){}
 
 // Links do NLG Tracking e do WhatsApp
 document.querySelectorAll('a[href="#tracking"].btn-track, .track-go').forEach(a=>{
