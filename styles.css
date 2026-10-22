@@ -342,3 +342,17 @@ footer li a{display:inline-block;padding:5px 0}
 .nav-right > *{flex-shrink:0}
 .btn-sm{white-space:nowrap}
 .back{display:block}
+
+/* rodada 2 */
+.svc-art{position:relative}
+.svc-tag{position:absolute;left:14px;top:14px;z-index:1;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);background:rgba(6,19,37,.55);border:1px solid rgba(255,177,94,.45);padding:4px 10px;border-radius:999px}
+.nets-title{color:#fff;text-align:center;font-size:1rem;font-weight:600;letter-spacing:.04em;margin:56px 0 0;opacity:.9}
+.nets{margin-top:18px}
+.diffs li:first-child{grid-column:auto}
+.hq-art{padding:0;background:#0d2a52}
+.hq-art canvas{display:block;width:100%;height:auto}
+.map-label{fill:rgba(255,255,255,.85);font-size:11px;font-weight:600;text-anchor:middle;paint-order:stroke;stroke:#071a33;stroke-width:3px}
+.map-label.home{fill:var(--accent-2);font-size:12px}
+@media (max-width:700px){.map-label{display:none}}
+.strip-item,.strip-lbl{min-width:0}
+.strip-lbl{overflow-wrap:anywhere}

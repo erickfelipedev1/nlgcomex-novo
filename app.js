@@ -21,7 +21,7 @@ const store = {
 const DICT = { en: (window.I18N || {}).en || {}, es: (window.I18N || {}).es || {}, pt: {} };
 const DYN_PT = {
   "err.req": "Preencha este campo.", "err.email": "Informe um e-mail válido, por exemplo nome@empresa.com.",
-  "err.sel": "Selecione uma opção.", "ok.copied": "Copiado!", "bl.read": "Ler artigo completo",
+  "err.sel": "Selecione uma opção.", "ok.copied": "Copiado!", "f.sending": "Abrindo seu e-mail…", "wd.sp": "Santos, SP", "bl.read": "Ler artigo completo",
   "meta.desc": $("#metaDesc").getAttribute("content")
 };
 Object.assign(DICT.pt, DYN_PT);
@@ -48,6 +48,7 @@ function setLang(l) {
     b.setAttribute("aria-pressed", String(on));
   });
   renderBlog();
+  drawMap();
   // limpa mensagens de erro (estão no idioma anterior)
   $$(".field.invalid").forEach(f => f.classList.remove("invalid"));
   $$(".err").forEach(e => { e.textContent = ""; });
@@ -147,6 +148,8 @@ form.addEventListener("submit", e => {
   const subject = "Cotação pelo site - " + v("#f-company");
   $("#mailCopy").value = "Assunto: " + subject + "\n\n" + lines;
   const st = $("#formStatus"); st.hidden = false; st.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" });
+  const sb = $("#submitBtn"), sbTxt = sb.textContent; sb.disabled = true; sb.textContent = t("f.sending");
+  setTimeout(() => { sb.disabled = false; sb.textContent = sbTxt; }, 3000);
   window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines);
 });
 $("#copyBtn").addEventListener("click", () => {
@@ -155,21 +158,6 @@ $("#copyBtn").addEventListener("click", () => {
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(ta.value).then(done, () => { ta.select(); });
   else { ta.select(); try { document.execCommand("copy"); done(); } catch (e) {} }
 });
-
-/* ===== Indicador numérico: o HTML já traz o valor real; a animação é só um bônus ===== */
-function countUp(el) {
-  const to = +el.dataset.to; if (!to || reduce) return;
-  const t0 = performance.now(), dur = 1400;
-  (function step(now) {
-    const p = Math.min((now - t0) / dur, 1);
-    el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
-    if (p < 1) requestAnimationFrame(step); else el.textContent = to;
-  })(t0);
-}
-if ("IntersectionObserver" in window) {
-  const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } }), { threshold: .6 });
-  $$(".count").forEach(el => cio.observe(el));
-}
 
 /* ===== Revelar ao rolar (sem JS ou com movimento reduzido, tudo já aparece) ===== */
 if ("IntersectionObserver" in window && !reduce) {
@@ -187,6 +175,7 @@ if ("IntersectionObserver" in window && !reduce) {
 const D = Math.PI / 180, RAW = window.NLG_LAND || "", land = [];
 for (let i = 0; i + 6 <= RAW.length; i += 6) land.push([parseInt(RAW.substr(i, 3), 36) / 10 - 180, parseInt(RAW.substr(i + 3, 3), 36) / 10 - 90]);
 const HOME = [-46.33, -23.96]; // Santos
+const HUB_KEYS = ["wd.r1", "wd.r2", "wd.r3", "wd.r5", "wd.r6", "wd.r7"];
 const HUBS = [[121.47, 31.23], [4.48, 51.92], [-80.19, 25.76], [55.27, 25.2], [3.38, 6.52], [151.2, -33.87]]; // um ponto por região, ilustrativo
 
 /* ===== Mapa conceitual ===== */
@@ -204,9 +193,23 @@ function drawMap() {
     const q = px(d), dist = Math.hypot(q[0] - h[0], q[1] - h[1]), cy = Math.min(h[1], q[1]) - dist * .28, cx = (h[0] + q[0]) / 2;
     out += '<path class="arc" d="M' + h[0].toFixed(1) + ' ' + h[1].toFixed(1) + ' Q' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ' + q[0].toFixed(1) + ' ' + q[1].toFixed(1) + '"/>';
   });
-  HUBS.forEach(d => { const q = px(d); out += '<circle class="hub-ring" cx="' + q[0].toFixed(1) + '" cy="' + q[1].toFixed(1) + '" r="5"/><circle class="hub" cx="' + q[0].toFixed(1) + '" cy="' + q[1].toFixed(1) + '" r="3.6"/>'; });
-  out += '<circle class="hub-home-ring" cx="' + h[0].toFixed(1) + '" cy="' + h[1].toFixed(1) + '" r="6"/><circle class="hub-home" cx="' + h[0].toFixed(1) + '" cy="' + h[1].toFixed(1) + '" r="5.5"/>';
+  HUBS.forEach((d, k) => { const q = px(d); out += '<circle class="hub-ring" cx="' + q[0].toFixed(1) + '" cy="' + q[1].toFixed(1) + '" r="5"/><circle class="hub" cx="' + q[0].toFixed(1) + '" cy="' + q[1].toFixed(1) + '" r="3.6"/><text class="map-label" x="' + q[0].toFixed(1) + '" y="' + (q[1] - 11).toFixed(1) + '">' + t(HUB_KEYS[k]) + '</text>'; });
+  out += '<circle class="hub-home-ring" cx="' + h[0].toFixed(1) + '" cy="' + h[1].toFixed(1) + '" r="6"/><circle class="hub-home" cx="' + h[0].toFixed(1) + '" cy="' + h[1].toFixed(1) + '" r="5.5"/><text class="map-label home" x="' + h[0].toFixed(1) + '" y="' + (h[1] + 22).toFixed(1) + '">' + t("wd.sp") + '</text>';
   svg.innerHTML = out;
+}
+
+/* ===== Mapa da sede: recorte do Brasil com Santos marcado ===== */
+function drawHq() {
+  const cv = $("#hqMap"); if (!cv) return;
+  const ctx = cv.getContext("2d"), W = cv.width, H = cv.height;
+  const L0 = -85, L1 = -15, A0 = 5, A1 = -36; // recorte (lon, lat)
+  const x = lo => (lo - L0) / (L1 - L0) * W, y = la => (la - A0) / (A1 - A0) * H;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = "rgba(160,200,255,.6)";
+  land.forEach(p => { if (p[0] < L0 || p[0] > L1 || p[1] > A0 || p[1] < A1) return; ctx.fillRect(x(p[0]) - 2, y(p[1]) - 2, 4, 4); });
+  const sx = x(HOME[0]), sy = y(HOME[1]);
+  ctx.strokeStyle = "rgba(242,140,40,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
+  ctx.fillStyle = "#f28c28"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
 /* ===== Globo do hero (canvas, pausa fora da tela) ===== */
@@ -266,5 +269,6 @@ $("#year").textContent = new Date().getFullYear();
 const saved = store.get("nlg-lang");
 if (saved === "en" || saved === "es") setLang(saved); else renderBlog();
 drawMap();
+drawHq();
 initGlobe();
 })();
