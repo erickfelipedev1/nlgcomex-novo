@@ -235,6 +235,12 @@ function drawHq() {
   setTimeout(finish, 1500);
 })();
 
+/* Recarregar a página sempre volta ao topo (sem restaurar a rolagem anterior) */
+try {
+  const nav = performance.getEntriesByType("navigation")[0];
+  if (nav && nav.type === "reload") { window.scrollTo(0, 0); addEventListener("load", () => window.scrollTo(0, 0)); }
+} catch (e) {}
+
 /* ===== Início ===== */
 $("#year").textContent = new Date().getFullYear();
 const saved = store.get("nlg-lang");
