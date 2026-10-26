@@ -549,3 +549,7 @@ footer{padding:72px 0 30px}
   .strip-item,.strip-item:nth-child(2){border-right:0;border-bottom:1px solid rgba(255,255,255,.16);padding:16px 20px}
   .strip-item:last-child{border-bottom:0}
 }
+
+/* hero sem cartão lateral */
+.hero-grid{grid-template-columns:minmax(0,1fr)}
+.hero h1{max-width:16em}
