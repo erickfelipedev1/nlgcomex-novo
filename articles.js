@@ -32,7 +32,166 @@ window.ARTICLES=[
     "Antes de decidir, conviene comparar el costo total de la operación y no solo el valor del flete. Informe a nuestro equipo el origen, el destino, el tipo de mercadería y el plazo previsto para que se evalúen las alternativas."
    ]
   },
-  "img": "img/photos/blog-1.webp"
+  "img": "img/photos/blog-1.webp",
+  "svc": [
+   "/frete-maritimo/",
+   "Conheça o frete marítimo internacional da NLG"
+  ]
+ },
+ {
+  "slug": "como-cotar-frete-maritimo",
+  "img": "img/photos/svc-importacao.webp",
+  "svc": [
+   "/frete-maritimo/",
+   "Conheça o frete marítimo internacional da NLG"
+  ],
+  "pt": {
+   "c": "Frete marítimo",
+   "t": "Quais informações são necessárias para cotar um frete marítimo?",
+   "e": "Veja o que reunir antes de pedir uma cotação e agilize a análise das alternativas.",
+   "b": [
+    "Pedir uma cotação de frete marítimo fica mais rápido quando as informações da carga já estão organizadas. Quanto mais completos os dados, mais precisa tende a ser a análise das alternativas.",
+    "Os dados mais importantes são:",
+    "- Tipo de operação: importação ou exportação;",
+    "- Origem e destino da carga (cidade ou porto);",
+    "- Descrição da mercadoria e suas características;",
+    "- Peso, dimensões e volume, quando já disponíveis;",
+    "- Prazo desejado para a chegada ou o embarque;",
+    "- Documentos da carga, se você já os tiver.",
+    "Se algum desses dados ainda não estiver definido, não há problema: a equipe da NLG orienta sobre as informações complementares e sobre o que ainda precisa ser alinhado com o fornecedor ou com o cliente.",
+    "Com esses pontos em mãos, é possível comparar rotas e condições disponíveis e equilibrar custo e necessidade operacional."
+   ]
+  }
+ },
+ {
+  "slug": "frete-aereo-internacional-o-que-considerar",
+  "img": "img/photos/svc-aereo.webp",
+  "svc": [
+   "/frete-aereo/",
+   "Conheça o frete aéreo internacional da NLG"
+  ],
+  "pt": {
+   "c": "Frete aéreo",
+   "t": "Frete aéreo internacional: o que considerar antes de contratar?",
+   "e": "Prazo, características da carga e disponibilidade de embarque: os pontos que merecem atenção.",
+   "b": [
+    "O frete aéreo costuma ser considerado quando o prazo é prioridade. Antes de contratar, vale avaliar alguns pontos para que a solução esteja alinhada à necessidade da operação.",
+    "- Prazo: qual é a urgência real da entrega ou do embarque;",
+    "- Características da carga: peso, dimensões, volume e natureza da mercadoria;",
+    "- Disponibilidade de embarque: nem toda rota e data estão disponíveis em qualquer momento;",
+    "- Destino: o aeroporto de destino e as etapas posteriores até a entrega;",
+    "- Custo total: além do frete em si, considere as demais etapas da operação.",
+    "Em muitos casos, comparar o modal aéreo com o marítimo ajuda a decidir. Veja também o conteúdo sobre como escolher entre frete marítimo e aéreo.",
+    "Informe origem, destino, tipo de mercadoria e prazo à equipe da NLG para que as alternativas sejam avaliadas."
+   ]
+  }
+ },
+ {
+  "slug": "agenciamento-de-cargas-o-que-e-e-como-funciona",
+  "img": "img/photos/svc-agenciamento.webp",
+  "svc": [
+   "/agenciamento-de-cargas/",
+   "Conheça o agenciamento de cargas da NLG"
+  ],
+  "pt": {
+   "c": "Agenciamento",
+   "t": "Agenciamento de cargas: o que é e como funciona?",
+   "e": "Entenda o papel do agenciamento na organização do transporte internacional de mercadorias.",
+   "b": [
+    "O agenciamento de cargas internacionais é o serviço que organiza e coordena o transporte internacional de mercadorias, conectando a empresa aos transportadores e parceiros envolvidos.",
+    "Dependendo do escopo contratado, ele pode abranger:",
+    "- Cotação de frete;",
+    "- Reserva de espaço;",
+    "- Orientação sobre documentos de transporte;",
+    "- Acompanhamento do embarque.",
+    "Na prática, o agente de cargas faz a interlocução entre a empresa e os transportadores, avalia rotas e condições de frete e ajuda a estruturar uma solução alinhada à mercadoria, ao destino e ao prazo.",
+    "Por isso, é importante definir com clareza, no início, o que está incluído no serviço e quais responsabilidades cabem a cada parte."
+   ]
+  }
+ },
+ {
+  "slug": "etapas-do-desembaraco-aduaneiro",
+  "img": "img/photos/svc-desembaraco.webp",
+  "svc": [
+   "/desembaraco-aduaneiro/",
+   "Conheça o desembaraço aduaneiro com a NLG"
+  ],
+  "pt": {
+   "c": "Desembaraço aduaneiro",
+   "t": "Desembaraço aduaneiro: quais etapas sua empresa precisa conhecer?",
+   "e": "Dos documentos à liberação da mercadoria: uma visão geral das etapas.",
+   "b": [
+    "O desembaraço aduaneiro é a etapa em que a mercadoria é conferida e liberada pelos órgãos responsáveis. As exigências variam conforme o produto, o tipo de operação e a situação da carga, mas é possível entender o caminho em linhas gerais:",
+    "- Reunião e conferência dos documentos da operação;",
+    "- Registro da declaração junto aos sistemas e órgãos competentes;",
+    "- Análise e conferência da mercadoria e dos documentos, quando aplicável;",
+    "- Pagamento de tributos e taxas devidos, quando houver;",
+    "- Liberação da mercadoria para seguir ao destino.",
+    "Em qualquer uma dessas etapas, informações incompletas ou divergentes podem gerar pendências e atrasos. Por isso, a orientação documental e o acompanhamento do processo são importantes."
+   ]
+  }
+ },
+ {
+  "slug": "como-acompanhar-conteiner-transporte-maritimo",
+  "img": "img/photos/svc-maritimo.webp",
+  "svc": [
+   "/#tracking",
+   "Conheça o NLG Tracking"
+  ],
+  "pt": {
+   "c": "NLG Tracking",
+   "t": "Como acompanhar seu contêiner durante o transporte marítimo?",
+   "e": "O que saber para consultar a localização da carga e como funciona o NLG Tracking.",
+   "b": [
+    "Saber onde está a carga ajuda a planejar recebimento, estoque e entregas. No transporte marítimo, o acompanhamento costuma ser feito a partir de dados de identificação da carga, como o número do contêiner e o documento de transporte.",
+    "Para clientes da NLG, o NLG Tracking permite consultar a localização do contêiner durante o transporte marítimo, com mais visibilidade sobre a operação.",
+    "Se tiver dúvidas sobre o acesso ou sobre as informações da sua operação, entre em contato com a equipe da NLG. Ainda não é cliente? Conte sobre sua operação e solicite uma cotação."
+   ]
+  }
+ },
+ {
+  "slug": "custos-de-uma-importacao",
+  "img": "img/photos/blog-2.webp",
+  "svc": [
+   "/importacao/",
+   "Conheça o suporte à importação da NLG"
+  ],
+  "pt": {
+   "c": "Importação",
+   "t": "Quais custos considerar no planejamento de uma importação?",
+   "e": "Frete, tributos, despesas no destino e outras etapas: um roteiro para olhar o custo total.",
+   "b": [
+    "Planejar uma importação olhando só o preço do produto pode esconder custos importantes. Para ter uma visão mais completa, vale considerar:",
+    "- Valor da mercadoria e condições comerciais acordadas com o fornecedor;",
+    "- Frete internacional, marítimo ou aéreo;",
+    "- Seguro da carga, quando contratado;",
+    "- Tributos e taxas incidentes na importação, que variam conforme o produto e a operação;",
+    "- Despesas no porto ou aeroporto de destino e custos de desembaraço;",
+    "- Transporte e entrega até o seu endereço.",
+    "Cada operação tem suas particularidades, e os custos podem mudar conforme a rota, o modal e a documentação. Por isso, analisar as alternativas antes de decidir ajuda a fazer escolhas mais conscientes."
+   ]
+  }
+ },
+ {
+  "slug": "logistica-da-exportacao",
+  "img": "img/photos/svc-exportacao.webp",
+  "svc": [
+   "/exportacao/",
+   "Conheça o suporte à exportação da NLG"
+  ],
+  "pt": {
+   "c": "Exportação",
+   "t": "Como organizar a logística da sua exportação?",
+   "e": "Documentação, embarque e necessidades do destino: pontos de atenção para exportar com mais segurança.",
+   "b": [
+    "Levar produtos a outros mercados exige organização antes do embarque. Alguns pontos merecem atenção desde o início:",
+    "- Documentação da operação: informações completas e consistentes evitam pendências;",
+    "- Escolha do transporte: marítimo ou aéreo, conforme prazo, carga e orçamento;",
+    "- Embarque: planejamento de datas e etapas até a saída da mercadoria;",
+    "- Destino: exigências e necessidades do país ou do cliente de destino.",
+    "Entender o que já foi combinado com o comprador e o que cabe à sua empresa é o primeiro passo para definir o escopo necessário."
+   ]
+  }
  },
  {
   "slug": "primeiros-passos-para-importar",
@@ -72,7 +231,11 @@ window.ARTICLES=[
     "Las exigencias varían según la mercadería y la operación. Nuestro equipo orienta sobre lo que hay que gestionar, según el alcance contratado."
    ]
   },
-  "img": "img/photos/blog-2.webp"
+  "img": "img/photos/blog-2.webp",
+  "svc": [
+   "/importacao/",
+   "Conheça o suporte à importação da NLG"
+  ]
  },
  {
   "slug": "desembaraco-aduaneiro-documentacao",
@@ -106,6 +269,10 @@ window.ARTICLES=[
     "Con orientación documental y seguimiento de los procedimientos, es posible identificar pendientes a tiempo y conducir la liberación junto a los responsables."
    ]
   },
-  "img": "img/photos/blog-3.webp"
+  "img": "img/photos/blog-3.webp",
+  "svc": [
+   "/desembaraco-aduaneiro/",
+   "Conheça o desembaraço aduaneiro com a NLG"
+  ]
  }
 ];

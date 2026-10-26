@@ -1,6 +1,7 @@
 /* Traduções. O português vive no próprio HTML (data-i18n); aqui ficam EN e ES. */
 window.I18N = {
 en: {
+  "ab.more":"Learn more about NLG",
   "intro.skip":"Skip",
   "fq.p":"Did not find what you were looking for? Our team advises on your case.",
   "ft.photos":"Photos:",
@@ -20,8 +21,8 @@ en: {
   "sv.s5.tag":"Import",
   "sv.s6.tag":"Export",
   "wd.sp":"Santos, SP",
-  "meta.title":"NLG Comex | Import, Export and International Logistics",
-  "meta.desc":"NLG Comex: foreign trade company in Santos, Brazil. Ocean freight, air freight, cargo forwarding and customs clearance, with follow-up through NLG Tracking.",
+  "meta.title":"International Logistics and Foreign Trade | NLG",
+  "meta.desc":"Foreign trade in Santos, Brazil. Ocean and air freight, cargo forwarding and customs clearance. Request your quote.",
   "a11y.skip":"Skip to content","a11y.nav":"Main","a11y.menu":"Menu","a11y.cred":"Credentials","a11y.foot":"Footer",
   "nav.solutions":"Solutions","nav.how":"How we work","nav.about":"About us","nav.blog":"Blog","nav.contact":"Contact","nav.client":"Client area","hd.quote":"Request a quote",
   "hero.eyebrow":"Import, export and international logistics",
@@ -34,7 +35,7 @@ en: {
   "in.p1":"A shipment may mean restocking your inventory, keeping a plant running or the delivery your customer is waiting for.",
   "in.p2":"That is why our work starts by understanding your needs. We assess the specifics of the operation, guide the next steps and follow the progress of the process.",
   "qk.title":"Where to start?","qk.imp":"I want to import","qk.imp.d":"Plan the arrival of your goods","qk.exp":"I want to export","qk.exp.d":"Take your products to other markets","qk.help":"I need guidance","qk.help.d":"Talk to our team",
-  "sv.eyebrow":"Solutions","sv.title":"The needs of your operation define our work.","sv.text":"Discover NLG's solutions to support the international movement of your goods.",
+  "sv.eyebrow":"Solutions","sv.title":"The needs of your operation define our work.","sv.text":"Discover NLG's solutions, from Santos, Brazil, to support the international movement of your goods.",
   "sv.s1.t":"International ocean freight","sv.s1.d":"Transport suited to your cargo and your business, for import and export.","sv.s1.b1":"Route and lead time assessed","sv.s1.b2":"Cost and operational need balanced","sv.s1.b3":"Loading follow-up","sv.s1.l":"Quote ocean freight",
   "sv.s2.t":"International air freight","sv.s2.d":"A solution aligned with the urgency of the operation, for import and export.","sv.s2.b1":"Flight availability assessed","sv.s2.b2":"Costs and lead times made clear","sv.s2.b3":"Follow-up of each stage","sv.s2.l":"Quote air freight",
   "sv.s3.t":"International cargo forwarding","sv.s3.d":"We connect the transport stages to the needs of your business.","sv.s3.b1":"Liaison with carriers and partners","sv.s3.b2":"From quote to follow-up","sv.s3.b3":"Organized information flow","sv.s3.l":"Request cargo forwarding",
@@ -87,6 +88,7 @@ en: {
   "ft.about":"Ocean freight, air freight, cargo forwarding and foreign trade solutions with attention to your operation.","ft.nav":"Navigate","ft.client":"Client area","ft.contact":"Get in touch","ft.hours":"Hours: 8am to 6pm","ft.privacy":"Privacy Policy","ft.rights":"All rights reserved."
 },
 es: {
+  "ab.more":"Conozca más sobre NLG",
   "intro.skip":"Omitir",
   "fq.p":"¿No encontró lo que buscaba? Nuestro equipo orienta sobre su caso.",
   "ft.photos":"Fotografías:",
@@ -106,8 +108,8 @@ es: {
   "sv.s5.tag":"Importación",
   "sv.s6.tag":"Exportación",
   "wd.sp":"Santos, SP",
-  "meta.title":"NLG Comex | Importación, Exportación y Logística Internacional",
-  "meta.desc":"NLG Comex: empresa de comercio exterior en Santos, Brasil. Flete marítimo, flete aéreo, agenciamiento de cargas y despacho aduanero, con seguimiento por NLG Tracking.",
+  "meta.title":"Logística Internacional y Comercio Exterior | NLG",
+  "meta.desc":"Comercio exterior en Santos, Brasil. Flete marítimo y aéreo, agenciamiento de cargas y despacho aduanero. Solicite su cotización.",
   "a11y.skip":"Ir al contenido","a11y.nav":"Principal","a11y.menu":"Menú","a11y.cred":"Credenciales","a11y.foot":"Pie de página",
   "nav.solutions":"Soluciones","nav.how":"Cómo trabajamos","nav.about":"Sobre nosotros","nav.blog":"Blog","nav.contact":"Contacto","nav.client":"Área del cliente","hd.quote":"Solicitar cotización",
   "hero.eyebrow":"Importación, exportación y logística internacional",
@@ -120,7 +122,7 @@ es: {
   "in.p1":"Una mercadería puede representar la reposición de su stock, el funcionamiento de una industria o la entrega que su cliente está esperando.",
   "in.p2":"Por eso, nuestro trabajo comienza por entender su necesidad. Evaluamos las particularidades de la operación, orientamos los próximos pasos y acompañamos el avance del proceso.",
   "qk.title":"¿Por dónde empezar?","qk.imp":"Quiero importar","qk.imp.d":"Planificar la llegada de las mercaderías","qk.exp":"Quiero exportar","qk.exp.d":"Llevar productos a otros mercados","qk.help":"Necesito orientación","qk.help.d":"Hablar con nuestro equipo",
-  "sv.eyebrow":"Soluciones","sv.title":"Las necesidades de su operación definen nuestro trabajo.","sv.text":"Conozca las soluciones de NLG para apoyar el movimiento internacional de sus mercaderías.",
+  "sv.eyebrow":"Soluciones","sv.title":"Las necesidades de su operación definen nuestro trabajo.","sv.text":"Conozca las soluciones de NLG, desde Santos, Brasil, para apoyar el movimiento internacional de sus mercaderías.",
   "sv.s1.t":"Flete marítimo internacional","sv.s1.d":"Transporte adecuado a su carga y a su negocio, para importación y exportación.","sv.s1.b1":"Ruta y plazo evaluados","sv.s1.b2":"Costo y necesidad operativa equilibrados","sv.s1.b3":"Seguimiento del embarque","sv.s1.l":"Cotizar flete marítimo",
   "sv.s2.t":"Flete aéreo internacional","sv.s2.d":"Solución acorde a la urgencia de la operación, para importación y exportación.","sv.s2.b1":"Disponibilidad de embarque evaluada","sv.s2.b2":"Costos y plazos con claridad","sv.s2.b3":"Seguimiento de cada etapa","sv.s2.l":"Cotizar flete aéreo",
   "sv.s3.t":"Agenciamiento de cargas internacionales","sv.s3.d":"Conectamos las etapas del transporte con las necesidades de su negocio.","sv.s3.b1":"Enlace con transportistas y socios","sv.s3.b2":"De la cotización al seguimiento","sv.s3.b3":"Flujo de información organizado","sv.s3.l":"Solicitar agenciamiento de cargas",

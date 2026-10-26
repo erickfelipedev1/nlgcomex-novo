@@ -4,9 +4,9 @@
 const $ = (s, r) => (r || document).querySelector(s);
 const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
 const EXTRA = {
-  pt: { "bl.back": "← Voltar ao blog", "bl.home": "← Voltar ao site", "bl.cta.t": "Quer conversar sobre a sua operação?", "bl.title2": "Blog", "bl.read": "Ler artigo completo", "nav.blog": "Blog", "hd.quote": "Solicitar cotação", "ab.cta": "Falar com nossa equipe", "ft.privacy": "Política de Privacidade", "ft.rights": "Todos os direitos reservados.", "bl.t1": "Acompanhe conteúdos sobre frete marítimo, frete aéreo, agenciamento de cargas, desembaraço aduaneiro, importação e exportação." },
-  en: { "bl.back": "← Back to the blog", "bl.home": "← Back to the site", "bl.cta.t": "Want to talk about your operation?", "bl.title2": "Blog" },
-  es: { "bl.back": "← Volver al blog", "bl.home": "← Volver al sitio", "bl.cta.t": "¿Quiere conversar sobre su operación?", "bl.title2": "Blog" }
+  pt: { "bl.back": "← Voltar ao blog", "bl.home": "← Voltar ao site", "bl.cta.t": "Quer conversar sobre a sua operação?", "bl.title2": "Conteúdo para planejar melhor sua operação internacional", "bl.read": "Ler artigo completo", "nav.blog": "Blog", "hd.quote": "Solicitar cotação", "ab.cta": "Falar com nossa equipe", "ft.privacy": "Política de Privacidade", "ft.rights": "Todos os direitos reservados.", "bl.t1": "Acompanhe conteúdos sobre frete marítimo, frete aéreo, agenciamento de cargas, desembaraço aduaneiro, importação e exportação." },
+  en: { "bl.back": "← Back to the blog", "bl.home": "← Back to the site", "bl.cta.t": "Want to talk about your operation?", "bl.title2": "Content to better plan your international operation" },
+  es: { "bl.back": "← Volver al blog", "bl.home": "← Volver al sitio", "bl.cta.t": "¿Quiere conversar sobre su operación?", "bl.title2": "Contenido para planificar mejor su operación internacional" }
 };
 const I = window.I18N || { en: {}, es: {} };
 const dict = l => Object.assign({}, EXTRA.pt, I[l] || {}, EXTRA[l] || {});
@@ -30,7 +30,7 @@ function render() {
     });
     if (ul) html += '<ul class="ticks">' + ul + "</ul>";
     $("#aBody").innerHTML = html;
-    document.title = c.t + " | Blog NLG Comex";
+    document.title = c.t + " | NLG";
   }
   if (grid) {
     grid.innerHTML = arts.map(x => { const c = x[lang] || x.pt, href = x.slug + ".html";

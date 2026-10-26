@@ -2,5 +2,6 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "trailingSlash": true
 }

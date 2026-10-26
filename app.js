@@ -60,7 +60,7 @@ $$(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.data
 function renderBlog() {
   const grid = $("#blogGrid");
   if (!grid || !window.ARTICLES) return;
-  grid.innerHTML = window.ARTICLES.map(a => {
+  grid.innerHTML = window.ARTICLES.slice(0, 3).map(a => {
     const d = a[lang] || a.pt, href = "blog/" + a.slug + ".html";
     return '<article class="post reveal in"><div class="svc-art"><img src="' + a.img + '" alt="" loading="lazy" decoding="async" width="900" height="506"></div>' +
       '<div class="post-body"><span class="cat">' + d.c + '</span><h3><a href="' + href + '">' + d.t + '</a></h3><p>' + d.e +

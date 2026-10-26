@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nlgcomex-novo.vercel.app/</loc></url>
-  <url><loc>https://nlgcomex-novo.vercel.app/privacidade.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/frete-maritimo/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/frete-aereo/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/agenciamento-de-cargas/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/desembaraco-aduaneiro/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/importacao/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/exportacao/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/sobre/</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/contato/</loc></url>
   <url><loc>https://nlgcomex-novo.vercel.app/blog/</loc></url>
   <url><loc>https://nlgcomex-novo.vercel.app/blog/frete-maritimo-ou-aereo.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/como-cotar-frete-maritimo.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/frete-aereo-internacional-o-que-considerar.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/agenciamento-de-cargas-o-que-e-e-como-funciona.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/etapas-do-desembaraco-aduaneiro.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/como-acompanhar-conteiner-transporte-maritimo.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/custos-de-uma-importacao.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/blog/logistica-da-exportacao.html</loc></url>
   <url><loc>https://nlgcomex-novo.vercel.app/blog/primeiros-passos-para-importar.html</loc></url>
   <url><loc>https://nlgcomex-novo.vercel.app/blog/desembaraco-aduaneiro-documentacao.html</loc></url>
+  <url><loc>https://nlgcomex-novo.vercel.app/privacidade.html</loc></url>
 </urlset>
