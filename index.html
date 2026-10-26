@@ -59,7 +59,8 @@
 
 <section class="hero" aria-labelledby="hero-title">
   <img class="hero-photo" src="img/photos/hero.webp" alt="" width="1920" height="1280" fetchpriority="high" decoding="async">
-  <div class="container hero-inner">
+  <div class="container hero-inner hero-grid">
+    <div class="hero-copy">
     <span class="eyebrow on-dark" data-i18n="hero.eyebrow">Importação, exportação e logística internacional</span>
     <h1 id="hero-title" data-i18n-html="hero.title">Sua carga cruza fronteiras. Nossa atenção acompanha <span class="hl">cada etapa.</span></h1>
     <p class="hero-sub" data-i18n="hero.text">Frete marítimo, frete aéreo, agenciamento de cargas e desembaraço aduaneiro, com acompanhamento próximo e clareza para decidir.</p>
@@ -67,8 +68,14 @@
       <a href="#contato" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Solicitar cotação</a>
       <a href="#tracking" class="btn btn-outline btn-lg" data-i18n="hero.cta2">Acompanhar carga</a>
     </div>
+    </div>
+    <aside class="quick hero-card" aria-labelledby="quick-t">
+      <h3 id="quick-t" data-i18n="qk.title">Por onde começar?</h3>
+      <a class="quick-item" href="#contato" data-svc="importacao" data-op="importacao"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 19h16"/></svg><span><b data-i18n="qk.imp">Quero importar</b><small data-i18n="qk.imp.d">Planejar a chegada das mercadorias</small></span></a>
+      <a class="quick-item" href="#contato" data-svc="exportacao" data-op="exportacao"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V9M7 14l5-5 5 5M4 5h16"/></svg><span><b data-i18n="qk.exp">Quero exportar</b><small data-i18n="qk.exp.d">Levar produtos a outros mercados</small></span></a>
+      <a class="quick-item" href="#contato" data-svc="orientacao"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></svg><span><b data-i18n="qk.help">Preciso de orientação</b><small data-i18n="qk.help.d">Conversar com nossa equipe</small></span></a>
+    </aside>
   </div>
-  
 </section>
 
 <section class="strip" aria-label="Credenciais" data-i18n-aria="a11y.cred">
@@ -81,27 +88,22 @@
 </section>
 
 <section class="intro" aria-labelledby="in-title">
-  <div class="container split">
+  <div class="container intro-grid">
     <div>
       <span class="eyebrow" data-i18n="in.eyebrow">Apresentação</span>
       <h2 id="in-title" data-i18n="in.title">Por trás de cada carga, existe um negócio que precisa seguir em frente.</h2>
+    </div>
+    <div class="intro-copy">
       <p class="lead" data-i18n="in.p1">Uma mercadoria pode representar a reposição do seu estoque, o funcionamento de uma indústria ou a entrega que seu cliente está esperando.</p>
       <p class="lead" data-i18n="in.p2">Por isso, nossa atuação começa pelo entendimento da sua necessidade. Avaliamos as particularidades da operação, orientamos os próximos passos e acompanhamos o andamento do processo.</p>
-    </div>
-    <div class="quick" role="group" aria-labelledby="quick-t">
-      <h3 id="quick-t" data-i18n="qk.title">Por onde começar?</h3>
-      <a class="quick-item" href="#contato" data-svc="importacao" data-op="importacao"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 19h16"/></svg><span><b data-i18n="qk.imp">Quero importar</b><small data-i18n="qk.imp.d">Planejar a chegada das mercadorias</small></span></a>
-      <a class="quick-item" href="#contato" data-svc="exportacao" data-op="exportacao"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V9M7 14l5-5 5 5M4 5h16"/></svg><span><b data-i18n="qk.exp">Quero exportar</b><small data-i18n="qk.exp.d">Levar produtos a outros mercados</small></span></a>
-      <a class="quick-item" href="#contato" data-svc="orientacao"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></svg><span><b data-i18n="qk.help">Preciso de orientação</b><small data-i18n="qk.help.d">Conversar com nossa equipe</small></span></a>
     </div>
   </div>
 </section>
 
 <section id="solucoes" class="soft" aria-labelledby="sv-title">
   <div class="container">
-    <div class="center">
-      <span class="eyebrow" data-i18n="sv.eyebrow">Soluções</span>
-      <h2 id="sv-title" data-i18n="sv.title">As necessidades da sua operação definem o nosso trabalho.</h2>
+    <div class="sec-head">
+      <div><span class="eyebrow" data-i18n="sv.eyebrow">Soluções</span><h2 id="sv-title" data-i18n="sv.title">As necessidades da sua operação definem o nosso trabalho.</h2></div>
       <p class="lead" data-i18n="sv.text">Conheça as soluções da NLG para apoiar a movimentação internacional das suas mercadorias.</p>
     </div>
     <div class="svc-grid">
@@ -224,8 +226,17 @@
 </section>
 
 <section class="soft" id="sobre" aria-labelledby="ab-title">
-  <div class="container split">
-    <div>
+  <div class="container about">
+    <div class="about-media">
+      <img src="img/photos/about.webp" alt="Vista aérea de um terminal portuário com guindastes e contêineres" loading="lazy" decoding="async" width="1400" height="875">
+      <aside class="hq" aria-labelledby="hq-t">
+      <div class="hq-art"><canvas id="hqMap" width="640" height="300" role="img" aria-label="Mapa com a localização de Santos, SP"></canvas></div>
+      <h3 id="hq-t" data-i18n="ab.hq">Sede em Santos, SP</h3>
+      <p>Praça Antônio Teles, 12, Sala 67<br>Centro, Santos/SP</p>
+      <p><a href="tel:+551332198181">(13) 3219-8181</a><br><a href="mailto:contato@nlgcomex.com.br">contato@nlgcomex.com.br</a></p>
+    </aside>
+    </div>
+    <div class="about-copy">
       <span class="eyebrow" data-i18n="ab.eyebrow">Sobre a NLG</span>
       <h2 id="ab-title" data-i18n="ab.title">Proximidade em cada operação.</h2>
       <p class="lead" data-i18n="ab.p1">A NLG é uma empresa de comércio exterior com sede em Santos/SP, que apoia empresas em suas operações de importação e exportação.</p>
@@ -236,12 +247,6 @@
       </div>
       <a href="#contato" class="btn btn-primary mt" data-i18n="ab.cta">Falar com nossa equipe</a>
     </div>
-    <aside class="hq" aria-labelledby="hq-t">
-      <div class="hq-art"><canvas id="hqMap" width="640" height="300" role="img" aria-label="Mapa com a localização de Santos, SP"></canvas></div>
-      <h3 id="hq-t" data-i18n="ab.hq">Sede em Santos, SP</h3>
-      <p>Praça Antônio Teles, 12, Sala 67<br>Centro, Santos/SP</p>
-      <p><a href="tel:+551332198181">(13) 3219-8181</a><br><a href="mailto:contato@nlgcomex.com.br">contato@nlgcomex.com.br</a></p>
-    </aside>
   </div>
 </section>
 
@@ -262,10 +267,12 @@
 </section>
 
 <section class="soft" id="faq" aria-labelledby="fq-title">
-  <div class="container">
-    <div class="center">
+  <div class="container faq-grid">
+    <div class="faq-side">
       <span class="eyebrow" data-i18n="fq.eyebrow">Perguntas frequentes</span>
       <h2 id="fq-title" data-i18n="fq.title">Vamos esclarecer os primeiros passos?</h2>
+      <p class="lead" data-i18n="fq.p">Não encontrou o que procurava? Nossa equipe orienta sobre o seu caso.</p>
+      <a href="#contato" class="btn btn-outline-dark" data-i18n="ab.cta">Falar com nossa equipe</a>
     </div>
     <div class="faq">
       <details><summary data-i18n="fq.q1">Quais informações preciso enviar para solicitar uma cotação?</summary><p data-i18n="fq.a1">Informe se a operação é de importação ou exportação, a origem, o destino, a descrição da mercadoria e o prazo desejado. Se já tiver peso, dimensões, volume e documentos da carga, envie também. Nossa equipe orientará sobre as informações complementares.</p></details>
