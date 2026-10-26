@@ -212,7 +212,7 @@ function drawHq() {
   ctx.fillStyle = "#5ebcd4"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
-/* ===== Intro cinematográfica: uma vez por sessão, com botão de pular ===== */
+/* ===== Intro cinematográfica: toca a cada carregamento, com botão de pular ===== */
 (function () {
   const root = document.documentElement, el = $("#intro");
   if (!el) return;
@@ -227,7 +227,6 @@ function drawHq() {
       root.classList.remove("intro-on");
       document.body.style.overflow = "";
       el.remove();
-      try { sessionStorage.setItem("nlg-intro", "1"); } catch (e) {}
     }, 800);
   };
   $("#introSkip").addEventListener("click", finish);
