@@ -49,7 +49,6 @@ function setLang(l) {
   });
   renderBlog();
   drawMap();
-  if (typeof applyMotion === "function") applyMotion();
   // limpa mensagens de erro (estão no idioma anterior)
   $$(".field.invalid").forEach(f => f.classList.remove("invalid"));
   $$(".err").forEach(e => { e.textContent = ""; });
@@ -172,16 +171,6 @@ if ("IntersectionObserver" in window && !reduce) {
   });
 }
 
-/* ===== Animação do topo (globo, avião, navio): ligada por padrão, com botão de pausar ===== */
-let motion = store.get("nlg-motion") !== "off";
-function applyMotion() {
-  document.documentElement.classList.toggle("hero-paused", !motion);
-  const sv = $(".hero-ship"); if (sv && sv.pauseAnimations) { motion ? sv.unpauseAnimations() : sv.pauseAnimations(); }
-  const b = $("#motionBtn"); if (b) { b.setAttribute("aria-pressed", String(!motion)); b.setAttribute("aria-label", t(motion ? "a11y.pause" : "a11y.play")); }
-  if (motion && window.nlgGlobeStart) window.nlgGlobeStart();
-}
-$("#motionBtn").addEventListener("click", () => { motion = !motion; store.set("nlg-motion", motion ? "on" : "off"); applyMotion(); });
-
 /* ===== Dados do mapa-múndi (pontos de terra em land.js) ===== */
 const D = Math.PI / 180, RAW = window.NLG_LAND || "", land = [];
 for (let i = 0; i + 6 <= RAW.length; i += 6) land.push([parseInt(RAW.substr(i, 3), 36) / 10 - 180, parseInt(RAW.substr(i + 3, 3), 36) / 10 - 90]);
@@ -223,65 +212,10 @@ function drawHq() {
   ctx.fillStyle = "#5ebcd4"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
-/* ===== Globo do hero (canvas, pausa fora da tela) ===== */
-function initGlobe() {
-  const cv = $("#globe"); if (!cv) return;
-  const ctx = cv.getContext("2d"), hero = cv.parentElement;
-  const toV = (lo, la) => [Math.cos(la * D) * Math.sin(lo * D), Math.sin(la * D), Math.cos(la * D) * Math.cos(lo * D)];
-  const arcs = HUBS.map((d, k) => {
-    const a = toV(HOME[0], HOME[1]), b = toV(d[0], d[1]), dot = a[0] * b[0] + a[1] * b[1] + a[2] * b[2], om = Math.acos(Math.min(1, Math.max(-1, dot))), N = 60, pts = [];
-    for (let i = 0; i <= N; i++) { const u = i / N, s1 = Math.sin((1 - u) * om) / Math.sin(om), s2 = Math.sin(u * om) / Math.sin(om), hh = 1 + Math.sin(Math.PI * u) * om * .16; pts.push([(a[0] * s1 + b[0] * s2) * hh, (a[1] * s1 + b[1] * s2) * hh, (a[2] * s1 + b[2] * s2) * hh]); }
-    return { pts, off: k / HUBS.length, dur: 3.4 + (k % 3) * .6 };
-  });
-  let R, cx, cy, dpr, rot = -HOME[0] * D + .5, tilt = -.35, W = 0, H = 0;
-  function size() {
-    dpr = Math.min(devicePixelRatio || 1, 2); W = hero.clientWidth; H = hero.clientHeight;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const wide = W > 980;
-    R = wide ? Math.min(W * .19, H * .33, 300) : Math.min(W * .3, H * .17, 130);
-    cx = wide ? W * .8 : W * .8; cy = wide ? H * .4 : H * .27;
-    if (!motion) frame(performance.now());
-  }
-  const P = v => { const c = Math.cos(rot), s = Math.sin(rot); const x = v[0] * c + v[2] * s, z = -v[0] * s + v[2] * c, y = v[1], ct = Math.cos(tilt), st = Math.sin(tilt); return [cx + R * x, cy - R * (y * ct - z * st), y * st + z * ct]; };
-  function frame(now) {
-    const tt = now / 1000;
-    if (motion) rot += .0025;
-    ctx.clearRect(0, 0, W, H);
-    let g = ctx.createRadialGradient(cx, cy, R * .9, cx, cy, R * 1.35); g.addColorStop(0, "rgba(94,188,212,.22)"); g.addColorStop(1, "rgba(94,188,212,0)");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 1.35, 0, 7); ctx.fill();
-    g = ctx.createRadialGradient(cx - R * .35, cy - R * .4, R * .1, cx, cy, R); g.addColorStop(0, "rgba(20,40,150,.5)"); g.addColorStop(1, "rgba(0,10,30,.75)");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fill();
-    ctx.strokeStyle = "rgba(130,200,225,.3)"; ctx.lineWidth = 1.2; ctx.stroke();
-    const c = Math.cos(rot), s = Math.sin(rot), ct = Math.cos(tilt), st = Math.sin(tilt);
-    for (let i = 0; i < land.length; i++) {
-      const lo = land[i][0] * D, la = land[i][1] * D, cl = Math.cos(la), v0 = cl * Math.sin(lo), v1 = Math.sin(la), v2 = cl * Math.cos(lo);
-      const x = v0 * c + v2 * s, z = -v0 * s + v2 * c, y2 = v1 * ct - z * st, z2 = v1 * st + z * ct; if (z2 <= 0) continue;
-      const sz = .8 + z2 * 1.5; ctx.fillStyle = "rgba(185,225,240," + (.16 + z2 * .6) + ")"; ctx.fillRect(cx + R * x - sz / 2, cy - R * y2 - sz / 2, sz, sz);
-    }
-    ctx.lineCap = "round";
-    arcs.forEach(a => {
-      const pp = a.pts.map(P), head = (((tt / a.dur) + a.off) % 1 + 1) % 1, tail = .28, n = pp.length - 1;
-      ctx.strokeStyle = "rgba(94,188,212,.2)"; ctx.lineWidth = 1; ctx.beginPath(); let on = false;
-      pp.forEach(p => { if (p[2] > -.05) { on ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); on = true; } else on = false; }); ctx.stroke();
-      if (!motion) return;
-      for (let i = 1; i <= n; i++) { const u = i / n; if (u > head || u < head - tail) continue; const p0 = pp[i - 1], p1 = pp[i]; if (p0[2] < -.05 || p1[2] < -.05) continue; const al = (u - (head - tail)) / tail; ctx.strokeStyle = "rgba(" + (94 + al * 120 | 0) + "," + (188 + al * 40 | 0) + ",225," + al + ")"; ctx.lineWidth = 1 + al * 2; ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke(); }
-    });
-    if (motion && visible) requestAnimationFrame(frame); else running = false;
-  }
-  let visible = true, running = false;
-  const start = () => { if (!running && motion) { running = true; requestAnimationFrame(frame); } };
-  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); }).observe(hero);
-  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(size, 200); });
-  size(); start();
-  window.nlgGlobeStart = start;
-}
-
 /* ===== Início ===== */
 $("#year").textContent = new Date().getFullYear();
 const saved = store.get("nlg-lang");
 if (saved === "en" || saved === "es") setLang(saved); else renderBlog();
 drawMap();
 drawHq();
-initGlobe();
-applyMotion();
 })();
