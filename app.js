@@ -228,12 +228,12 @@ function drawHq() {
       document.body.style.overflow = "";
       el.remove();
       try { sessionStorage.setItem("nlg-intro", "1"); } catch (e) {}
-    }, 1050);
+    }, 800);
   };
   $("#introSkip").addEventListener("click", finish);
   addEventListener("keydown", e => { if (e.key === "Escape") finish(); });
   $("#introSkip").focus({ preventScroll: true });
-  setTimeout(finish, 3700);
+  setTimeout(finish, 1500);
 })();
 
 /* ===== Início ===== */
