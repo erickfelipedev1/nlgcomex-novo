@@ -560,8 +560,8 @@ footer{padding:72px 0 30px}
 .intro-on #intro{display:grid;place-items:center;position:fixed;inset:0;z-index:200;background:var(--navy);overflow:hidden;clip-path:inset(0 0 0 0);transition:clip-path .75s cubic-bezier(.76,0,.24,1);animation:introFallback .7s 3s forwards}
 .intro-on #intro.out{clip-path:inset(0 0 100% 0)}
 @keyframes introFallback{to{clip-path:inset(0 0 100% 0);visibility:hidden}}
-.intro-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:introBg 2.2s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes introBg{0%{opacity:0;transform:scale(1.2)}35%{opacity:.5}100%{opacity:.4;transform:scale(1.02)}}
+.intro-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:introBg 1.6s cubic-bezier(.4,.1,.3,1) forwards}
+@keyframes introBg{0%{opacity:0;transform:translateX(-5%) scale(1.18)}30%{opacity:.5}100%{opacity:.46;transform:translateX(5%) scale(1.18)}}
 #intro::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,16,36,.25) 0%,rgba(0,16,36,.92) 85%)}
 .intro-center{position:relative;z-index:2;text-align:center;display:grid;justify-items:center;gap:24px;padding:0 24px}
 .intro-logo{width:min(320px,64vw);height:auto;filter:brightness(0) invert(1);opacity:0;transform:translateY(16px) scale(.96);animation:introUp .7s cubic-bezier(.2,.7,.2,1) .15s forwards}
@@ -573,23 +573,23 @@ footer{padding:72px 0 30px}
 .intro-skip:hover{background:rgba(255,255,255,.14)}
 
 /* entrada do hero logo após a intro */
-.hero-play .hero-photo{animation:heroZoom 1.8s cubic-bezier(.2,.7,.2,1) both}
+.hero-play .hero-photo{animation:heroPan 30s linear both}
 .hero-play .hero-copy > *{animation:heroUp .7s cubic-bezier(.2,.7,.2,1) both}
 .hero-play .hero-copy > :nth-child(1){animation-delay:.12s}
 .hero-play .hero-copy > :nth-child(2){animation-delay:.2s}
 .hero-play .hero-copy > :nth-child(3){animation-delay:.28s}
 .hero-play .hero-copy > :nth-child(4){animation-delay:.36s}
 @keyframes heroUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-@keyframes heroZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
+@keyframes heroPan{from{transform:translateX(5%) scale(1.15)}to{transform:translateX(7.5%) scale(1.15)}}
 
 /* a intro é curta, tem botão de pular e toca uma vez por sessão: segue animando mesmo com "reduzir movimento" */
 @media (prefers-reduced-motion:reduce){
   .intro-on #intro{animation:introFallback .7s 3s forwards!important;transition:clip-path .75s cubic-bezier(.76,0,.24,1)!important}
-  .intro-bg{animation:introBg 2.2s cubic-bezier(.2,.7,.2,1) forwards!important}
+  .intro-bg{animation:introBg 1.6s cubic-bezier(.4,.1,.3,1) forwards!important}
   .intro-logo{animation:introUp .7s cubic-bezier(.2,.7,.2,1) .15s forwards!important}
   .intro-line{animation:introLine .6s cubic-bezier(.2,.7,.2,1) .5s forwards!important}
   .intro-tag{animation:introUp .6s cubic-bezier(.2,.7,.2,1) .8s forwards!important}
   .intro-skip{animation:introUp .4s ease .3s forwards!important}
-  .hero-play .hero-photo{animation:heroZoom 1.8s cubic-bezier(.2,.7,.2,1) both!important}
+  .hero-play .hero-photo{animation:heroPan 30s linear both!important}
   .hero-play .hero-copy > *{animation:heroUp .7s cubic-bezier(.2,.7,.2,1) both!important}
 }
