@@ -195,7 +195,7 @@ function drawMap() {
   const ctx = cv.getContext("2d"), CW = cv.width, CH = cv.height;
   const X = lo => (lo + 180) / 360, Y = la => (85 - la) / 145;
   ctx.clearRect(0, 0, CW, CH);
-  ctx.fillStyle = "rgba(160,200,255,.5)";
+  ctx.fillStyle = "rgba(150,205,225,.5)";
   const s = CW / 1000 * 1.9;
   land.forEach(p => { if (p[1] < -58 || p[1] > 82) return; ctx.fillRect(X(p[0]) * CW - s / 2, Y(p[1]) * CH - s / 2, s, s); });
   const px = p => [X(p[0]) * 1000, Y(p[1]) * 420], h = px(HOME);
@@ -216,11 +216,11 @@ function drawHq() {
   const L0 = -85, L1 = -15, A0 = 5, A1 = -36; // recorte (lon, lat)
   const x = lo => (lo - L0) / (L1 - L0) * W, y = la => (la - A0) / (A1 - A0) * H;
   ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = "rgba(160,200,255,.6)";
+  ctx.fillStyle = "rgba(150,205,225,.6)";
   land.forEach(p => { if (p[0] < L0 || p[0] > L1 || p[1] > A0 || p[1] < A1) return; ctx.fillRect(x(p[0]) - 2, y(p[1]) - 2, 4, 4); });
   const sx = x(HOME[0]), sy = y(HOME[1]);
-  ctx.strokeStyle = "rgba(242,140,40,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
-  ctx.fillStyle = "#f28c28"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
+  ctx.strokeStyle = "rgba(94,188,212,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
+  ctx.fillStyle = "#5ebcd4"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
 /* ===== Globo do hero (canvas, pausa fora da tela) ===== */
@@ -247,24 +247,24 @@ function initGlobe() {
     const tt = now / 1000;
     if (motion) rot += .0025;
     ctx.clearRect(0, 0, W, H);
-    let g = ctx.createRadialGradient(cx, cy, R * .9, cx, cy, R * 1.35); g.addColorStop(0, "rgba(70,140,255,.25)"); g.addColorStop(1, "rgba(70,140,255,0)");
+    let g = ctx.createRadialGradient(cx, cy, R * .9, cx, cy, R * 1.35); g.addColorStop(0, "rgba(94,188,212,.22)"); g.addColorStop(1, "rgba(94,188,212,0)");
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 1.35, 0, 7); ctx.fill();
-    g = ctx.createRadialGradient(cx - R * .35, cy - R * .4, R * .1, cx, cy, R); g.addColorStop(0, "rgba(40,90,170,.5)"); g.addColorStop(1, "rgba(8,24,52,.7)");
+    g = ctx.createRadialGradient(cx - R * .35, cy - R * .4, R * .1, cx, cy, R); g.addColorStop(0, "rgba(20,40,150,.5)"); g.addColorStop(1, "rgba(0,10,30,.75)");
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fill();
-    ctx.strokeStyle = "rgba(120,180,255,.3)"; ctx.lineWidth = 1.2; ctx.stroke();
+    ctx.strokeStyle = "rgba(130,200,225,.3)"; ctx.lineWidth = 1.2; ctx.stroke();
     const c = Math.cos(rot), s = Math.sin(rot), ct = Math.cos(tilt), st = Math.sin(tilt);
     for (let i = 0; i < land.length; i++) {
       const lo = land[i][0] * D, la = land[i][1] * D, cl = Math.cos(la), v0 = cl * Math.sin(lo), v1 = Math.sin(la), v2 = cl * Math.cos(lo);
       const x = v0 * c + v2 * s, z = -v0 * s + v2 * c, y2 = v1 * ct - z * st, z2 = v1 * st + z * ct; if (z2 <= 0) continue;
-      const sz = .8 + z2 * 1.5; ctx.fillStyle = "rgba(190,220,255," + (.16 + z2 * .6) + ")"; ctx.fillRect(cx + R * x - sz / 2, cy - R * y2 - sz / 2, sz, sz);
+      const sz = .8 + z2 * 1.5; ctx.fillStyle = "rgba(185,225,240," + (.16 + z2 * .6) + ")"; ctx.fillRect(cx + R * x - sz / 2, cy - R * y2 - sz / 2, sz, sz);
     }
     ctx.lineCap = "round";
     arcs.forEach(a => {
       const pp = a.pts.map(P), head = (((tt / a.dur) + a.off) % 1 + 1) % 1, tail = .28, n = pp.length - 1;
-      ctx.strokeStyle = "rgba(242,140,40,.2)"; ctx.lineWidth = 1; ctx.beginPath(); let on = false;
+      ctx.strokeStyle = "rgba(94,188,212,.2)"; ctx.lineWidth = 1; ctx.beginPath(); let on = false;
       pp.forEach(p => { if (p[2] > -.05) { on ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); on = true; } else on = false; }); ctx.stroke();
       if (!motion) return;
-      for (let i = 1; i <= n; i++) { const u = i / n; if (u > head || u < head - tail) continue; const p0 = pp[i - 1], p1 = pp[i]; if (p0[2] < -.05 || p1[2] < -.05) continue; const al = (u - (head - tail)) / tail; ctx.strokeStyle = "rgba(255," + (150 + al * 60 | 0) + ",60," + al + ")"; ctx.lineWidth = 1 + al * 2; ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke(); }
+      for (let i = 1; i <= n; i++) { const u = i / n; if (u > head || u < head - tail) continue; const p0 = pp[i - 1], p1 = pp[i]; if (p0[2] < -.05 || p1[2] < -.05) continue; const al = (u - (head - tail)) / tail; ctx.strokeStyle = "rgba(" + (94 + al * 120 | 0) + "," + (188 + al * 40 | 0) + ",225," + al + ")"; ctx.lineWidth = 1 + al * 2; ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke(); }
     });
     if (motion && visible) requestAnimationFrame(frame); else running = false;
   }
