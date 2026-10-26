@@ -34,7 +34,7 @@ function render() {
   }
   if (grid) {
     grid.innerHTML = arts.map(x => { const c = x[lang] || x.pt, href = x.slug + ".html";
-      return '<article class="post"><div class="svc-art"><svg viewBox="0 0 320 160" aria-hidden="true"><use href="#' + x.ill + '"/></svg></div><div class="post-body"><span class="cat">' + c.c + '</span><h3><a href="' + href + '">' + c.t + '</a></h3><p>' + c.e + '</p><a class="svc-link" href="' + href + '">' + d["bl.read"] + "</a></div></article>"; }).join("");
+      return '<article class="post"><div class="svc-art"><img src="../' + x.img + '" alt="" loading="lazy" decoding="async" width="900" height="506"></div><div class="post-body"><span class="cat">' + c.c + '</span><h3><a href="' + href + '">' + c.t + '</a></h3><p>' + c.e + '</p><a class="svc-link" href="' + href + '">' + d["bl.read"] + "</a></div></article>"; }).join("");
   }
 }
 $$(".lang button").forEach(b => b.addEventListener("click", () => { lang = b.dataset.lang; try { localStorage.setItem("nlg-lang", lang); } catch (e) {} render(); }));

@@ -63,7 +63,7 @@ function renderBlog() {
   if (!grid || !window.ARTICLES) return;
   grid.innerHTML = window.ARTICLES.map(a => {
     const d = a[lang] || a.pt, href = "blog/" + a.slug + ".html";
-    return '<article class="post reveal in"><div class="svc-art"><svg viewBox="0 0 320 160" aria-hidden="true"><use href="#' + a.ill + '"/></svg></div>' +
+    return '<article class="post reveal in"><div class="svc-art"><img src="' + a.img + '" alt="" loading="lazy" decoding="async" width="900" height="506"></div>' +
       '<div class="post-body"><span class="cat">' + d.c + '</span><h3><a href="' + href + '">' + d.t + '</a></h3><p>' + d.e +
       '</p><a class="svc-link" href="' + href + '">' + t("bl.read") + '</a></div></article>';
   }).join("");
@@ -238,8 +238,8 @@ function initGlobe() {
     dpr = Math.min(devicePixelRatio || 1, 2); W = hero.clientWidth; H = hero.clientHeight;
     cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const wide = W > 980;
-    R = wide ? Math.min(W * .3, H * .46, 400) : Math.min(W * .62, H * .42, 320);
-    cx = wide ? W * .74 : W * .5; cy = wide ? H * .46 : H * .62;
+    R = wide ? Math.min(W * .19, H * .33, 300) : Math.min(W * .3, H * .17, 130);
+    cx = wide ? W * .8 : W * .8; cy = wide ? H * .4 : H * .27;
     if (!motion) frame(performance.now());
   }
   const P = v => { const c = Math.cos(rot), s = Math.sin(rot); const x = v[0] * c + v[2] * s, z = -v[0] * s + v[2] * c, y = v[1], ct = Math.cos(tilt), st = Math.sin(tilt); return [cx + R * x, cy - R * (y * ct - z * st), y * st + z * ct]; };

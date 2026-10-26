@@ -2,7 +2,6 @@
 window.ARTICLES=[
  {
   "slug": "frete-maritimo-ou-aereo",
-  "ill": "ill-maritime",
   "pt": {
    "c": "Frete internacional",
    "t": "Frete marítimo ou aéreo: como escolher?",
@@ -32,11 +31,11 @@ window.ARTICLES=[
     "El flete aéreo suele atender mejor cargas urgentes, de alto valor o de menor volumen. El marítimo tiende a ser el indicado para volúmenes mayores, cuando el plazo permite un tránsito más largo.",
     "Antes de decidir, conviene comparar el costo total de la operación y no solo el valor del flete. Informe a nuestro equipo el origen, el destino, el tipo de mercadería y el plazo previsto para que se evalúen las alternativas."
    ]
-  }
+  },
+  "img": "img/photos/blog-1.webp"
  },
  {
   "slug": "primeiros-passos-para-importar",
-  "ill": "ill-import",
   "pt": {
    "c": "Importação",
    "t": "Primeiros passos para importar com mais clareza",
@@ -72,11 +71,11 @@ window.ARTICLES=[
     "- Reunir los documentos de la carga, como factura comercial, lista de empaque y documento de transporte.",
     "Las exigencias varían según la mercadería y la operación. Nuestro equipo orienta sobre lo que hay que gestionar, según el alcance contratado."
    ]
-  }
+  },
+  "img": "img/photos/blog-2.webp"
  },
  {
   "slug": "desembaraco-aduaneiro-documentacao",
-  "ill": "ill-customs",
   "pt": {
    "c": "Desembaraço aduaneiro",
    "t": "Desembaraço aduaneiro: por que a documentação importa",
@@ -106,6 +105,7 @@ window.ARTICLES=[
     "Los documentos incompletos o con divergencias son una de las causas más comunes de pendientes y demoras. Por eso, revisar la información antes del embarque y seguir el proceso de cerca ayuda a mantener plazos y costos bajo control.",
     "Con orientación documental y seguimiento de los procedimientos, es posible identificar pendientes a tiempo y conducir la liberación junto a los responsables."
    ]
-  }
+  },
+  "img": "img/photos/blog-3.webp"
  }
 ];
