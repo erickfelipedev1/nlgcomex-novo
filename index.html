@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>document.documentElement.className+=" js"</script>
+<script>document.documentElement.className+=" js";try{if(!sessionStorage.getItem("nlg-intro"))document.documentElement.className+=" intro-on"}catch(e){document.documentElement.className+=" intro-on"}</script>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"NLG Comex","alternateName":"Now Logistics Group","url":"https://nlgcomex-novo.vercel.app/","logo":"https://nlgcomex-novo.vercel.app/img/logo-nlg.png","telephone":"+55-13-3219-8181","email":"contato@nlgcomex.com.br","taxID":"05.726.384/0001-48","address":{"@type":"PostalAddress","streetAddress":"Praça Antônio Teles, 12, Sala 67, Centro","addressLocality":"Santos","addressRegion":"SP","addressCountry":"BR"},"sameAs":["https://www.instagram.com/nowlogisticsgroup","https://www.youtube.com/@nowlogisticsgroup","https://www.linkedin.com/company/now-logistics-group"]}
@@ -26,6 +26,15 @@
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="a11y.skip">Ir para o conteúdo</a>
+<div id="intro" class="intro-screen" role="presentation">
+  <img class="intro-bg" src="img/photos/hero.webp" alt="" width="1920" height="1280">
+  <div class="intro-center">
+    <img class="intro-logo" src="img/logo-nlg-comex.webp" alt="NLG Comex" width="312" height="86">
+    <span class="intro-line" aria-hidden="true"></span>
+    <p class="intro-tag" data-i18n="hero.eyebrow">Importação, exportação e logística internacional</p>
+  </div>
+  <button type="button" class="intro-skip" id="introSkip" data-i18n="intro.skip">Pular</button>
+</div>
 <div id="progress" aria-hidden="true"></div>
 
 <header id="top">

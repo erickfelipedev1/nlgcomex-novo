@@ -212,6 +212,30 @@ function drawHq() {
   ctx.fillStyle = "#5ebcd4"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
+/* ===== Intro cinematográfica: uma vez por sessão, com botão de pular ===== */
+(function () {
+  const root = document.documentElement, el = $("#intro");
+  if (!el) return;
+  if (!root.classList.contains("intro-on")) { el.remove(); root.classList.add("hero-play"); return; }
+  let done = false;
+  document.body.style.overflow = "hidden";
+  const finish = () => {
+    if (done) return; done = true;
+    el.classList.add("out");
+    root.classList.add("hero-play");
+    setTimeout(() => {
+      root.classList.remove("intro-on");
+      document.body.style.overflow = "";
+      el.remove();
+      try { sessionStorage.setItem("nlg-intro", "1"); } catch (e) {}
+    }, 1050);
+  };
+  $("#introSkip").addEventListener("click", finish);
+  addEventListener("keydown", e => { if (e.key === "Escape") finish(); });
+  $("#introSkip").focus({ preventScroll: true });
+  setTimeout(finish, 3700);
+})();
+
 /* ===== Início ===== */
 $("#year").textContent = new Date().getFullYear();
 const saved = store.get("nlg-lang");
