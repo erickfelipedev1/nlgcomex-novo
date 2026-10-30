@@ -49,6 +49,7 @@ function setLang(l) {
   });
   renderBlog();
   drawMap();
+  { const mb = $("#motionBtn"); if (mb) mb.setAttribute("aria-label", t(mb.getAttribute("aria-pressed") === "true" ? "a11y.play" : "a11y.pause")); }
   // limpa mensagens de erro (estão no idioma anterior)
   $$(".field.invalid").forEach(f => f.classList.remove("invalid"));
   $$(".err").forEach(e => { e.textContent = ""; });
@@ -211,6 +212,23 @@ function drawHq() {
   ctx.strokeStyle = "rgba(255,255,255,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
   ctx.fillStyle = "#ffffff"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
+
+/* ===== Vídeo do hero: toca sem som em laço; botão de pausar; pausa fora da tela e com economia de dados ===== */
+(function () {
+  const hv = $("#heroVideo"), mb = $("#motionBtn"); if (!hv || !mb) return;
+  const root = document.documentElement;
+  let playing = !(navigator.connection && navigator.connection.saveData);
+  const go = () => { const p = hv.play(); if (p && p.catch) p.catch(() => {}); };
+  function apply() {
+    root.classList.toggle("hero-paused", !playing);
+    mb.setAttribute("aria-pressed", String(!playing));
+    mb.setAttribute("aria-label", t(playing ? "a11y.pause" : "a11y.play"));
+    if (playing) go(); else hv.pause();
+  }
+  mb.addEventListener("click", () => { playing = !playing; apply(); });
+  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { if (!playing) return; if (e.isIntersecting) go(); else hv.pause(); }).observe(hv);
+  apply();
+})();
 
 /* Recarregar a página sempre volta ao topo (sem restaurar a rolagem anterior) */
 try {
