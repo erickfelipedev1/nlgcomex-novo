@@ -665,3 +665,24 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .contact-form .btn-outline-dark{color:var(--navy)}
 .contact .contact-form .btn.btn-primary{background:var(--navy-3);color:#fff}
 .contact .contact-form .btn.btn-primary:hover{background:var(--navy);color:#fff}
+
+
+/* ===== intro v2: muito mais movimento ===== */
+.intro-on #intro{transition:none;clip-path:none}
+.intro-on #intro.out{clip-path:none;animation:introOut .75s cubic-bezier(.7,0,.2,1) forwards!important}
+@keyframes introOut{0%{opacity:1;transform:scale(1);filter:blur(0)}100%{opacity:0;transform:scale(1.55);filter:blur(10px)}}
+.intro-on #intro.out .intro-center{animation:introCenterOut .75s cubic-bezier(.7,0,.2,1) forwards!important}
+@keyframes introCenterOut{to{transform:scale(2.4);opacity:0}}
+#introCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.intro-bg{animation:introBgPan 2.6s cubic-bezier(.4,.1,.3,1) forwards!important}
+@keyframes introBgPan{0%{opacity:0;transform:translateX(-7%) scale(1.3)}25%{opacity:.4}100%{opacity:.3;transform:translateX(7%) scale(1.3)}}
+.intro-center{z-index:2}
+.intro-logo{opacity:1!important;clip-path:inset(0 100% 0 0);transform:scale(1.2) translateY(0)!important;filter:brightness(0) invert(1) blur(8px);animation:introLogoIn 1s cubic-bezier(.2,.7,.2,1) .7s forwards!important}
+@keyframes introLogoIn{to{clip-path:inset(0 0 0 0);transform:scale(1) translateY(0);filter:brightness(0) invert(1) blur(0)}}
+.intro-line{animation:introLine .6s cubic-bezier(.2,.7,.2,1) 1.35s forwards!important}
+.intro-tag{opacity:1!important;transform:none!important;animation:none!important;display:flex;flex-wrap:wrap;justify-content:center;letter-spacing:.3em}
+.intro-tag span{display:inline-block;opacity:0;transform:translateY(16px);animation:introLetter .45s cubic-bezier(.2,.7,.2,1) calc(1.35s + var(--i) * .014s) forwards!important}
+@keyframes introLetter{to{opacity:1;transform:none}}
+.intro-skip{z-index:3;animation:introSkipIn .4s ease .3s forwards!important}
+@keyframes introSkipIn{to{opacity:1;transform:none}}
+@media (max-width:640px){.intro-tag{font-size:.62rem;letter-spacing:.2em}}

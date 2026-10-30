@@ -212,29 +212,6 @@ function drawHq() {
   ctx.fillStyle = "#ffffff"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
-/* ===== Intro cinematográfica: toca a cada carregamento, com botão de pular ===== */
-(function () {
-  const root = document.documentElement, el = $("#intro");
-  if (!el) return;
-  if (!root.classList.contains("intro-on")) { el.remove(); root.classList.add("hero-play"); return; }
-  let done = false;
-  document.body.style.overflow = "hidden";
-  const finish = () => {
-    if (done) return; done = true;
-    el.classList.add("out");
-    root.classList.add("hero-play");
-    setTimeout(() => {
-      root.classList.remove("intro-on");
-      document.body.style.overflow = "";
-      el.remove();
-    }, 800);
-  };
-  $("#introSkip").addEventListener("click", finish);
-  addEventListener("keydown", e => { if (e.key === "Escape") finish(); });
-  $("#introSkip").focus({ preventScroll: true });
-  setTimeout(finish, 1500);
-})();
-
 /* Recarregar a página sempre volta ao topo (sem restaurar a rolagem anterior) */
 try {
   const nav = performance.getEntriesByType("navigation")[0];
@@ -247,4 +224,112 @@ const saved = store.get("nlg-lang");
 if (saved === "en" || saved === "es") setLang(saved); else renderBlog();
 drawMap();
 drawHq();
+
+/* ===== Intro cinematográfica: toca a cada carregamento. Mapa de pontos com rotas que se desenham,
+   luzes viajando, logo revelado por varredura e saída em "mergulho" para dentro do site. ===== */
+(function () {
+  const root = document.documentElement, el = $("#intro");
+  if (!el) return;
+  if (!root.classList.contains("intro-on")) { el.remove(); root.classList.add("hero-play"); return; }
+
+  // frase da marca separada em letras, para entrar em cascata
+  const tag = $(".intro-tag");
+  if (tag) {
+    const txt = tag.textContent; tag.setAttribute("aria-label", txt); tag.textContent = "";
+    Array.from(txt).forEach((ch, i) => {
+      const sp = document.createElement("span"); sp.setAttribute("aria-hidden", "true");
+      sp.style.setProperty("--i", i); sp.textContent = ch === " " ? "\u00a0" : ch; tag.appendChild(sp);
+    });
+  }
+
+  let done = false, alive = true;
+  document.body.style.overflow = "hidden";
+  const finish = () => {
+    if (done) return; done = true;
+    el.classList.add("out");
+    root.classList.add("hero-play");
+    setTimeout(() => {
+      alive = false;
+      root.classList.remove("intro-on");
+      document.body.style.overflow = "";
+      el.remove();
+    }, 800);
+  };
+  $("#introSkip").addEventListener("click", finish);
+  addEventListener("keydown", e => { if (e.key === "Escape") finish(); });
+  $("#introSkip").focus({ preventScroll: true });
+  setTimeout(finish, 2500);
+
+  // ----- canvas: mapa de pontos + rotas animadas a partir de Santos -----
+  const cv = $("#introCanvas"); if (!cv || !land.length) return;
+  const ctx = cv.getContext("2d");
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  let W = 0, H = 0;
+  function fit() { W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  fit(); addEventListener("resize", fit);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const ease = u => 1 - Math.pow(1 - u, 3);
+  const t0 = performance.now();
+
+  function frame(now) {
+    if (!alive) return;
+    const t = (now - t0) / 1000;
+    ctx.clearRect(0, 0, W, H);
+    // câmera: o mapa desliza para a direita enquanto faz um zoom lento
+    const zoom = (W < 700 ? 1.9 : 1.25) * (0.92 + t * 0.07);
+    const sc = W * zoom / 360;
+    const c0 = -48 + t * 5, cy0 = 6;
+    const X = lo => W / 2 + (lo - c0) * sc, Y = la => H / 2 - (la - cy0) * sc;
+    const fadeIn = clamp(t / 0.5, 0, 1);
+
+    // terra
+    ctx.fillStyle = "rgba(255,255,255," + (0.5 * fadeIn) + ")";
+    const z = Math.max(1.4, sc * 0.2);
+    for (let i = 0; i < land.length; i++) {
+      const x = X(land[i][0]); if (x < -4 || x > W + 4) continue;
+      const y = Y(land[i][1]); if (y < -4 || y > H + 4) continue;
+      ctx.fillRect(x, y, z, z);
+    }
+
+    // rotas
+    const hx = X(HOME[0]), hy = Y(HOME[1]);
+    ctx.lineCap = "round";
+    HUBS.forEach((d, k) => {
+      const ex = X(d[0]), ey = Y(d[1]);
+      const dist = Math.hypot(ex - hx, ey - hy), cx = (hx + ex) / 2, cyy = Math.min(hy, ey) - dist * 0.3;
+      const start = 0.15 + k * 0.1, p = clamp((t - start) / 1.0, 0, 1), pe = ease(p);
+      if (p <= 0) return;
+      const pt = u => { const v = 1 - u; return [v * v * hx + 2 * v * u * cx + u * u * ex, v * v * hy + 2 * v * u * cyy + u * u * ey]; };
+      // traço já desenhado
+      ctx.strokeStyle = "rgba(255,255,255,.5)"; ctx.lineWidth = 1.3; ctx.beginPath();
+      const steps = 46; ctx.moveTo(hx, hy);
+      for (let i = 1; i <= steps * pe; i++) { const q = pt(i / steps); ctx.lineTo(q[0], q[1]); }
+      ctx.stroke();
+      // cabeça luminosa (viaja; depois de chegar, continua percorrendo a rota em laço)
+      const hu = p < 1 ? pe : ((t - start - 1.0) * 0.55) % 1;
+      const hd = pt(hu);
+      ctx.save(); ctx.shadowColor = "#ffffff"; ctx.shadowBlur = 14; ctx.fillStyle = "#fff";
+      ctx.beginPath(); ctx.arc(hd[0], hd[1], 2.6, 0, 7); ctx.fill(); ctx.restore();
+      if (p >= 1 || hu > 0.12) { // rastro curto atrás da cabeça
+        ctx.strokeStyle = "rgba(255,255,255,.9)"; ctx.lineWidth = 2; ctx.beginPath();
+        for (let i = 0; i <= 8; i++) { const q = pt(Math.max(0, hu - 0.12) + (0.12 * i) / 8); i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]); }
+        ctx.stroke();
+      }
+      // chegada: ponto e anel que se expande
+      if (p >= 1) {
+        const r = clamp((t - start - 1.0) / 0.7, 0, 1);
+        ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(ex, ey, 3.4, 0, 7); ctx.fill();
+        if (r < 1) { ctx.strokeStyle = "rgba(255,255,255," + (1 - r) + ")"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(ex, ey, 4 + r * 22, 0, 7); ctx.stroke(); }
+      }
+    });
+    // origem pulsando
+    const pulse = (t * 1.4) % 1;
+    ctx.strokeStyle = "rgba(255,255,255," + (1 - pulse) * 0.9 + ")"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(hx, hy, 6 + pulse * 30, 0, 7); ctx.stroke();
+    ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(hx, hy, 5.5, 0, 7); ctx.fill();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+
 })();
