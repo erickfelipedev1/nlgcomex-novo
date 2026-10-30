@@ -208,8 +208,8 @@ function drawHq() {
   ctx.fillStyle = "rgba(150,205,225,.6)";
   land.forEach(p => { if (p[0] < L0 || p[0] > L1 || p[1] > A0 || p[1] < A1) return; ctx.fillRect(x(p[0]) - 2, y(p[1]) - 2, 4, 4); });
   const sx = x(HOME[0]), sy = y(HOME[1]);
-  ctx.strokeStyle = "rgba(94,188,212,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
-  ctx.fillStyle = "#5ebcd4"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
+  ctx.strokeStyle = "rgba(255,255,255,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
+  ctx.fillStyle = "#ffffff"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
 }
 
 /* ===== Intro cinematográfica: toca a cada carregamento, com botão de pular ===== */

@@ -631,3 +631,37 @@ footer{padding:72px 0 30px}
 @media (min-width:981px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr 1.3fr}.page .foot-grid{grid-template-columns:1.4fr 1fr 1fr 1.3fr}}
 .about-copy .btn{margin-right:12px}
 .page .about-media{padding-bottom:0}
+
+/* ===== tom sóbrio: azul claro só em detalhes mínimos (paleta inalterada) ===== */
+.btn-primary{background:var(--navy-3);color:#fff}
+.btn-primary:hover{background:var(--navy);color:#fff}
+:is(header,.hero,.page-hero,.contact,.world,.journey.client,.nap:not(.nap-light),.intro-screen,.hq,.strip) .btn-primary{background:#fff;color:var(--navy)}
+:is(header,.hero,.page-hero,.contact,.world,.journey.client,.nap:not(.nap-light),.intro-screen,.hq,.strip) .btn-primary:hover{background:var(--bg-soft);color:var(--navy)}
+.nap a.btn{color:var(--navy)}
+.eyebrow.on-dark{color:rgba(255,255,255,.78)}
+.hero h1 .hl{color:#fff;background:linear-gradient(var(--accent),var(--accent)) 0 93%/100% 3px no-repeat;padding-bottom:.05em}
+.menu a:not(.btn):not(.btn-ghost):hover{color:#fff;text-decoration:underline;text-underline-offset:6px}
+.strip-item .ico,.strip-num span{color:rgba(255,255,255,.82)}
+.seal-mini,.net .seal{color:#fff;border-color:rgba(255,255,255,.5)}
+.svc-tag{color:#fff;border-color:rgba(255,255,255,.4)}
+.svc.featured .svc-link,.svc.featured .svc-title-link:hover{color:#fff}
+.svc.featured .ticks li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 5' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+#diferenciais .diffs .ico,#diferenciais .diffs li:first-child .ico{color:#fff}
+.steps .n{color:#fff}
+.contact .info .ic{color:#fff}
+.info > a:hover,footer a:hover,.hq a:hover,.crumbs a:hover{color:#fff}
+.crumbs a,.nap a{color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px}
+.nap a.btn{text-decoration:none}
+.nap-light a{color:var(--accent-ink);text-decoration:none}
+.map-label.home{fill:#fff}
+.arc{stroke:rgba(255,255,255,.55)}
+.hub-home{fill:#fff}.hub-home-ring{stroke:#fff}
+.faq details[open],.rel-card:hover{border-color:var(--navy-3)}
+.quick-item:hover{border-color:var(--navy-3)}
+.intro-line{background:#fff}
+header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-visible,.contact :focus-visible,footer :focus-visible,.journey.client :focus-visible,.svc.featured :focus-visible,.hq :focus-visible,.page-hero :focus-visible,.intro-screen :focus-visible{outline-color:#fff}
+.contact-form .btn-primary{background:var(--navy-3);color:#fff}
+.contact-form .btn-primary:hover{background:var(--navy);color:#fff}
+.contact-form .btn-outline-dark{color:var(--navy)}
+.contact .contact-form .btn.btn-primary{background:var(--navy-3);color:#fff}
+.contact .contact-form .btn.btn-primary:hover{background:var(--navy);color:#fff}
