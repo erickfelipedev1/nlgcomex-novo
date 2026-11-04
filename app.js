@@ -221,8 +221,16 @@ function initHq() {
     window.__hqMap = map;
     const fly = () => {
       if (started) return; started = true;
-      map.flyTo([LAT, LON], 17, { duration: 4.2, easeLinearity: 0.25 });
-      map.once("zoomend", () => { if (!L.Browser.mobile) map.dragging.enable(); L.control.zoom({ position: "bottomright" }).addTo(map); });
+      // zoom em ritmo uniforme, com partida e chegada suaves (o flyTo do Leaflet é rápido no começo)
+      const z0 = map.getZoom(), c0 = map.getCenter(), Z1 = 17, DUR = 9500, tt = performance.now();
+      const ease = u => 0.5 - 0.5 * Math.cos(Math.PI * u);              // easeInOutSine
+      (function step(now) {
+        const u = Math.min((now - tt) / DUR, 1), z = z0 + (Z1 - z0) * ease(u);
+        const f = (1 - Math.pow(2, z0 - z)) / (1 - Math.pow(2, z0 - Z1));  // mantém o alvo estável na tela durante o zoom
+        map.setView([c0.lat + (LAT - c0.lat) * f, c0.lng + (LON - c0.lng) * f], z, { animate: false });
+        if (u < 1) requestAnimationFrame(step);
+        else { if (!L.Browser.mobile) map.dragging.enable(); L.control.zoom({ position: "bottomright" }).addTo(map); }
+      })(tt);
     };
     if ("IntersectionObserver" in window) new IntersectionObserver(([en], ob) => { if (en.isIntersecting) { fly(); ob.disconnect(); } }, { threshold: 0.6 }).observe(art);
     else fly();
