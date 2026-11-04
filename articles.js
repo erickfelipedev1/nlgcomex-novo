@@ -194,6 +194,57 @@ window.ARTICLES=[
   }
  },
  {
+  "slug": "importancia-da-iata-na-carga-aerea",
+  "img": "img/photos/svc-aereo.webp",
+  "svc": [
+   "/frete-aereo/",
+   "Conheça o frete aéreo internacional da NLG"
+  ],
+  "pt": {
+   "c": "IATA",
+   "t": "A importância do credenciamento IATA na carga aérea",
+   "e": "Entenda o que é a IATA, o que significa ser um agente de carga credenciado e como isso se reflete na sua operação.",
+   "b": [
+    "A IATA (Associação Internacional de Transporte Aéreo) reúne companhias aéreas de todo o mundo. Para as empresas que trabalham com carga aérea, ela mantém o Programa de Agentes de Carga, que oferece o credenciamento de agentes (IATA Cargo Agency Accreditation). No dia a dia do mercado, esse credenciamento costuma ser chamado de \"certificação IATA\".",
+    "Segundo a própria IATA, o credenciamento indica às companhias aéreas que a empresa é um agente de carga financeiramente sólido e com equipe profissionalmente treinada. Para quem contrata frete aéreo, isso traz alguns pontos de atenção que fazem diferença:",
+    "- Critérios reconhecidos: o credenciamento passa por requisitos definidos pela IATA, o que serve de referência de seriedade para quem está escolhendo um agente;",
+    "- Regras comuns com as companhias aéreas: a relação entre agentes credenciados e as aéreas segue normas e manuais da própria IATA, o que organiza responsabilidades e procedimentos;",
+    "- Fluxo financeiro organizado: agentes credenciados podem usar o sistema CASS, que concentra a liquidação de pagamentos com as companhias aéreas participantes e ajuda a manter a operação estruturada;",
+    "- Rede internacional: a IATA informa que o programa reúne mais de 250 companhias aéreas e mais de 20 mil agentes, intermediários e associados em mais de 90 países e territórios;",
+    "- Capacitação: a IATA oferece cursos e programas em carga e logística, que incentivam a atualização das equipes.",
+    "É importante entender também o que o credenciamento não é. Ele não garante preço nem prazo: cada operação depende da rota, da disponibilidade de embarque, das características da carga e do momento do mercado. O que ele oferece é um sinal de profissionalismo e uma base de relacionamento organizada com as companhias aéreas.",
+    "Ao escolher um agente para o frete aéreo, vale perguntar qual é o vínculo dele com a IATA, qual é o escopo do serviço contratado e como será o acompanhamento das etapas. A NLG é membro da IATA e coordena o transporte aéreo para importação e exportação, considerando as características da mercadoria, a disponibilidade de embarque e o destino.",
+    "Fonte das informações sobre o programa: IATA, página do Programa de Agentes de Carga (iata.org)."
+   ]
+  }
+ },
+ {
+  "slug": "importancia-da-rede-twig",
+  "img": "img/photos/svc-agenciamento.webp",
+  "svc": [
+   "/agenciamento-de-cargas/",
+   "Conheça o agenciamento de cargas da NLG"
+  ],
+  "pt": {
+   "c": "Twig",
+   "t": "Rede Twig: o valor de uma rede seleta de agentes de carga",
+   "e": "Como funciona uma rede de agentes independentes e o que isso significa para cargas que cruzam fronteiras.",
+   "b": [
+    "Toda operação internacional depende de parceiros em outros países. É nesse ponto que entram as redes de agentes de carga independentes, como a Twig. A Twig é uma rede internacional que reúne agentes de carga selecionados. Muitas empresas chamam esse tipo de participação de \"certificação\", mas, na prática, trata-se de uma rede de membros com processo seletivo, e não de um órgão regulador.",
+    "Segundo a descrição da própria rede, a proposta é ir além de um simples diretório de empresas: reunir agentes que se conhecem, se comunicam e geram negócios entre si. Em materiais divulgados pela Twig, a seleção busca agentes com bom conhecimento do mercado local e solidez financeira, respeitando um limite de empresas por país.",
+    "Para quem importa ou exporta, a participação em uma rede como essa traz vantagens práticas:",
+    "- Parceiros no exterior com triagem prévia: quando a carga sai ou chega em outro país, a operação depende de um agente local. Uma rede seletiva ajuda a encontrar parceiros com histórico e comunicação;",
+    "- Comunicação direta entre agentes: alinhar prazos, documentos e pendências fica mais ágil quando já existe relacionamento entre as empresas;",
+    "- Alcance internacional: a rede descreve membros em diversos portos e aeroportos do mundo, ampliando as possibilidades de origem e destino;",
+    "- Ferramentas e avaliação: a plataforma da Twig oferece busca de agentes, avaliações e acompanhamento da atividade dentro da rede;",
+    "- Relacionamento contínuo: a rede promove eventos e encontros entre os membros, o que fortalece a confiança entre os parceiros.",
+    "Vale lembrar os limites. Ser membro de uma rede não garante preço, prazo nem disponibilidade em qualquer rota: a viabilidade de cada operação continua sendo avaliada caso a caso. A rede é um apoio de relacionamento e de parceiros, e não substitui a análise da sua demanda.",
+    "A NLG é membro da Twig e, no agenciamento de cargas internacionais, faz a interlocução com transportadores e parceiros logísticos, avaliando rotas, disponibilidade de embarque e condições de frete para estruturar uma solução alinhada à sua mercadoria, ao destino e ao prazo.",
+    "Fonte das informações sobre a rede: site da Twig Network (twignetwork.com)."
+   ]
+  }
+ },
+ {
   "slug": "primeiros-passos-para-importar",
   "pt": {
    "c": "Importação",
