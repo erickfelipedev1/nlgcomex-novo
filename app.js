@@ -82,6 +82,12 @@ function setMenu(open) {
   burger.setAttribute("aria-expanded", String(open));
 }
 burger.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+// clicar no logo da NLG volta ao topo da página (o alvo #top é o cabeçalho fixo, então a âncora sozinha não rola)
+$$('a.logo[href="#top"]').forEach(l => l.addEventListener("click", e => {
+  e.preventDefault(); setMenu(false);
+  window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  history.replaceState(null, "", location.pathname + location.search);
+}));
 $$("#menu a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 addEventListener("keydown", e => { if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); burger.focus(); } });
 
