@@ -728,3 +728,13 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 @media (max-width:420px){.logo img{height:36px}.partner{margin-left:10px;padding-left:10px}.partner img{height:19px}}
 @media (max-width:420px){.logo img{height:30px}.partner{margin-left:9px;padding-left:9px;height:22px}.partner img{height:16px}.nav{gap:8px}.nav-right{gap:6px}}
 @media (max-width:360px){.partner{display:none}}
+
+/* ===== IATA ao lado da Twig no topo ===== */
+.partner{gap:14px}
+.partner .p-iata{height:27px;width:auto}
+@media (max-width:420px){.partner{gap:8px}.partner .p-iata{height:17px}}
+@media (max-width:370px){.partner{display:none}}
+.partner{height:32px}
+.partner .p-iata{height:32px}
+@media (max-width:420px){.partner{height:22px}.partner .p-iata{height:20px}}
+@media (max-width:380px){.partner .p-iata{display:none}}
