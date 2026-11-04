@@ -738,3 +738,9 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .partner .p-iata{height:32px}
 @media (max-width:420px){.partner{height:22px}.partner .p-iata{height:20px}}
 @media (max-width:380px){.partner .p-iata{display:none}}
+
+/* logos nos cartões de associações */
+.net .seal{padding:11px}
+.net .seal img{width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1)}
+.net .seal{width:76px;height:76px;padding:13px}
+@media (max-width:640px){.net .seal{width:68px;height:68px;padding:12px}}
