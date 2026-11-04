@@ -744,3 +744,10 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .net .seal img{width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1)}
 .net .seal{width:76px;height:76px;padding:13px}
 @media (max-width:640px){.net .seal{width:68px;height:68px;padding:12px}}
+
+/* mapa real (Google Maps) no cartão da sede */
+.hq-art{padding:0;background:#0d2a52;overflow:hidden}
+.hq-map{display:block;width:100%;height:200px;border:0;filter:invert(92%) hue-rotate(180deg) saturate(.75) brightness(.92) contrast(.95)}
+.hq-link{display:inline-block;margin-top:10px;font-size:.88rem;font-weight:600;color:#fff;text-decoration:underline;text-underline-offset:3px}
+.hq-link::after{content:" ↗"}
+.hq-link:hover{opacity:.8}

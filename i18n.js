@@ -1,6 +1,7 @@
 /* Traduções. O português vive no próprio HTML (data-i18n); aqui ficam EN e ES. */
 window.I18N = {
 en: {
+  "ab.map":"View on Google Maps",
   "ab.more":"Learn more about NLG",
   "intro.skip":"Skip",
   "fq.p":"Did not find what you were looking for? Our team advises on your case.",
@@ -88,6 +89,7 @@ en: {
   "ft.about":"Ocean freight, air freight, cargo forwarding and foreign trade solutions with attention to your operation.","ft.nav":"Navigate","ft.client":"Client area","ft.contact":"Get in touch","ft.hours":"Hours: 8am to 6pm","ft.privacy":"Privacy Policy","ft.rights":"All rights reserved."
 },
 es: {
+  "ab.map":"Ver en Google Maps",
   "ab.more":"Conozca más sobre NLG",
   "intro.skip":"Omitir",
   "fq.p":"¿No encontró lo que buscaba? Nuestro equipo orienta sobre su caso.",
