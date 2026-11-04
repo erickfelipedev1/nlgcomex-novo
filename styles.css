@@ -720,3 +720,11 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .links-foot{margin-top:30px;font-size:.8rem;color:rgba(255,255,255,.6)}
 .links-page .links-motion{position:fixed;left:auto;right:16px;bottom:16px;z-index:5}
 .links-page :focus-visible{outline-color:#fff}
+
+/* ===== logo da Twig ao lado do logo da NLG no topo ===== */
+.brand{display:flex;align-items:center;flex-shrink:0;min-width:0}
+.partner{display:flex;align-items:center;margin-left:14px;padding-left:14px;border-left:1px solid rgba(255,255,255,.32);height:28px}
+.partner img{height:23px;width:auto;filter:brightness(0) invert(1);opacity:.92}
+@media (max-width:420px){.logo img{height:36px}.partner{margin-left:10px;padding-left:10px}.partner img{height:19px}}
+@media (max-width:420px){.logo img{height:30px}.partner{margin-left:9px;padding-left:9px;height:22px}.partner img{height:16px}.nav{gap:8px}.nav-right{gap:6px}}
+@media (max-width:360px){.partner{display:none}}
