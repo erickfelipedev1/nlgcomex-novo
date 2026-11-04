@@ -199,18 +199,43 @@ function drawMap() {
   svg.innerHTML = out;
 }
 
-/* ===== Mapa da sede: recorte do Brasil com Santos marcado ===== */
-function drawHq() {
-  const cv = $("#hqMap"); if (!cv) return;
-  const ctx = cv.getContext("2d"), W = cv.width, H = cv.height;
-  const L0 = -85, L1 = -15, A0 = 5, A1 = -36; // recorte (lon, lat)
-  const x = lo => (lo - L0) / (L1 - L0) * W, y = la => (la - A0) / (A1 - A0) * H;
-  ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = "rgba(150,205,225,.6)";
-  land.forEach(p => { if (p[0] < L0 || p[0] > L1 || p[1] > A0 || p[1] < A1) return; ctx.fillRect(x(p[0]) - 2, y(p[1]) - 2, 4, 4); });
-  const sx = x(HOME[0]), sy = y(HOME[1]);
-  ctx.strokeStyle = "rgba(255,255,255,.6)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 20, 0, 7); ctx.stroke();
-  ctx.fillStyle = "#ffffff"; ctx.beginPath(); ctx.arc(sx, sy, 9, 0, 7); ctx.fill();
+/* ===== Mapa da sede: zoom animado do planeta (zoom mínimo) até a rua, com mapa do OpenStreetMap (Leaflet) ===== */
+function initHq() {
+  const art = $(".hq-art"), box = $("#hqLeaf"), fr = $(".hq-fallback"), hud = $("#hqHud");
+  if (!art || !box) return;
+  const LAT = -23.93309, LON = -46.32408;                     // Praça Antonio Telles, Centro, Santos/SP
+  const LEAF = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
+  let started = false;
+  const fallback = () => { box.hidden = true; if (hud) hud.hidden = true; if (fr) { fr.hidden = false; fr.setAttribute("src", fr.dataset.src); } };
+
+  function build() {
+    const L = window.L; if (!L) return fallback();
+    const z0 = Math.max(0.6, Math.log2(box.clientWidth / 256));  // mundo inteiro cabendo na largura = zoom mínimo
+    const map = L.map(box, { zoomControl: false, zoomSnap: 0, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false,
+      dragging: false, touchZoom: false, tap: false, worldCopyJump: true, attributionControl: true }).setView([18, -22], z0);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, keepBuffer: 4,
+      attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>' }).addTo(map);
+    L.marker([LAT, LON], { icon: L.divIcon({ className: "hq-pin", html: "<span></span>", iconSize: [18, 18] }), interactive: false, keyboard: false }).addTo(map);
+    const show = () => { if (hud) hud.textContent = "Zoom " + map.getZoom().toFixed(1); };
+    map.on("zoom", show); show();
+    window.__hqMap = map;
+    const fly = () => {
+      if (started) return; started = true;
+      map.flyTo([LAT, LON], 17, { duration: 4.2, easeLinearity: 0.25 });
+      map.once("zoomend", () => { if (!L.Browser.mobile) map.dragging.enable(); L.control.zoom({ position: "bottomright" }).addTo(map); });
+    };
+    if ("IntersectionObserver" in window) new IntersectionObserver(([en], ob) => { if (en.isIntersecting) { fly(); ob.disconnect(); } }, { threshold: 0.6 }).observe(art);
+    else fly();
+  }
+
+  function load() {
+    if (window.L) return build();
+    const css = document.createElement("link"); css.rel = "stylesheet"; css.href = LEAF + "leaflet.min.css"; document.head.appendChild(css);
+    const sc = document.createElement("script"); sc.src = LEAF + "leaflet.min.js"; sc.onload = build; sc.onerror = fallback; document.head.appendChild(sc);
+  }
+  // só baixa a biblioteca e os tiles quando o cartão está perto da tela
+  if ("IntersectionObserver" in window) new IntersectionObserver(([en], ob) => { if (en.isIntersecting) { ob.disconnect(); load(); } }, { rootMargin: "500px" }).observe(art);
+  else load();
 }
 
 /* ===== Vídeo do hero: toca sem som em laço; botão de pausar; pausa fora da tela e com economia de dados ===== */
@@ -241,7 +266,7 @@ $("#year").textContent = new Date().getFullYear();
 const saved = store.get("nlg-lang");
 if (saved === "en" || saved === "es") setLang(saved); else renderBlog();
 drawMap();
-drawHq();
+initHq();
 
 /* ===== Intro cinematográfica: toca a cada carregamento. Mapa de pontos com rotas que se desenham,
    luzes viajando, logo revelado por varredura e saída em "mergulho" para dentro do site. ===== */

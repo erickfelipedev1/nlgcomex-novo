@@ -751,3 +751,16 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .hq-link{display:inline-block;margin-top:10px;font-size:.88rem;font-weight:600;color:#fff;text-decoration:underline;text-underline-offset:3px}
 .hq-link::after{content:" ↗"}
 .hq-link:hover{opacity:.8}
+
+/* ===== mapa da sede com zoom animado (Leaflet + OpenStreetMap) ===== */
+.hq-art{position:relative;height:210px;background:#04163a;overflow:hidden}
+.hq-leaf{position:absolute;inset:0;background:#04163a}
+.hq-leaf .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.92) saturate(.6)}
+.hq-leaf .leaflet-control-attribution{background:rgba(0,16,36,.7);color:rgba(255,255,255,.75);font-size:.62rem;padding:2px 6px}
+.hq-leaf .leaflet-control-attribution a{color:#fff;text-decoration:underline}
+.hq-leaf .leaflet-control-zoom{border:1px solid rgba(255,255,255,.3);border-radius:8px;overflow:hidden;box-shadow:none}
+.hq-leaf .leaflet-control-zoom a{background:rgba(0,16,36,.75);color:#fff;border-bottom-color:rgba(255,255,255,.2)}
+.hq-pin span{display:block;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--navy-3);animation:hqPing 1.8s ease-out infinite}
+@keyframes hqPing{0%{box-shadow:0 0 0 0 rgba(255,255,255,.75)}100%{box-shadow:0 0 0 22px rgba(255,255,255,0)}}
+.hq-hud{position:absolute;left:12px;top:12px;z-index:1100;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,16,36,.7);border:1px solid rgba(255,255,255,.3);padding:5px 10px;border-radius:6px;font-variant-numeric:tabular-nums}
+.hq-art .hq-fallback{position:absolute;inset:0;width:100%;height:100%;border:0}
