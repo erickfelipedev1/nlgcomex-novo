@@ -1,4 +1,4 @@
-/* NLG Comex — estilos do site. Tokens no :root; seções na ordem da página. */
+﻿/* NLG Comex — estilos do site. Tokens no :root; seções na ordem da página. */
 :root{
   --navy:#001024;
   --navy-2:#071a3a;
@@ -274,8 +274,8 @@ footer a:hover{color:var(--accent-2)}
 .js .reveal.in{opacity:1;transform:none}
 
 /* responsivo */
-@media (max-width:1240px){.hide-md{display:none}.menu-cta{display:flex}}
-@media (max-width:1240px){
+@media (max-width:1300px){.hide-md{display:none}.menu-cta{display:flex}}
+@media (max-width:1300px){
   .menu{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;padding:12px 20px 24px;gap:0;box-shadow:0 20px 30px rgba(0,0,0,.3)}
   .menu.open{display:flex}
   .menu a:not(.btn):not(.btn-ghost){padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.1);font-size:1rem}
@@ -339,7 +339,7 @@ footer a:hover{color:var(--accent-2)}
 .lang button{min-height:40px}
 .info > a{padding:6px 0}
 footer li a{display:inline-block;padding:5px 0}
-.nav.container{max-width:1320px}
+.nav.container{max-width:1400px}
 .nav-right > *{flex-shrink:0}
 .btn-sm{white-space:nowrap}
 .back{display:block}
@@ -771,3 +771,11 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .hq-art .hq-leaf .maplibregl-ctrl-attrib.maplibregl-compact{min-height:22px;padding:0 24px 0 6px}
 .hq-art .hq-leaf .maplibregl-ctrl-attrib.maplibregl-compact-show{padding:2px 26px 2px 8px}
 .hq-art .hq-leaf .maplibregl-ctrl-attrib-button{background-color:transparent}
+
+/* cabeçalho: cabe em notebooks (1301-1500px). Idiomas só com bandeira e espaços menores */
+@media (max-width:1500px){
+  .lang button span{display:none}
+  .lang button{padding:7px 9px}
+  .menu{gap:18px}
+  .nav-right{gap:8px}
+}
