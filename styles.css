@@ -807,3 +807,5 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .foot-certs{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:.88rem;font-weight:600}
 .foot-certs img{height:22px;width:auto;filter:brightness(0) invert(1);opacity:.9}
 .foot-certs+.social{margin-top:18px}
+.svc-also{margin-top:28px;text-align:center;font-size:.95rem;line-height:1.7}
+.svc-also b{color:var(--navy)}

@@ -219,3 +219,33 @@ Object.assign(window.I18N.es, {
   "ce.twig.t":"Agente acreditado de TWIG","ce.twig.d":"TWIG es una red internacional de agentes de carga independientes. Como agente acreditado, NLG cuenta con socios en diferentes regiones del mundo para apoyar importaciones y exportaciones, del origen al destino.",
   "o.5":"Almacén de cargas","o.6":"Transporte terrestre"
 });
+
+/* Copy institucional (comércio exterior e logística integrada desde 2003) */
+Object.assign(window.I18N.en, {
+  "ab.p1":"NLG is a foreign trade and integrated logistics company headquartered in Santos, Brazil, active since 2003. For more than 20 years it has supported companies in import and export operations, with national and international logistics solutions.",
+  "ab.p3":"We act as a strategic partner to companies: personalized service, a network of international partners and representatives, and integrated follow-up from origin to destination.",
+  "df.d1.d":"More than 20 years in foreign trade operations, to spot points of attention and guide import and export decisions.",
+  "df.d3.t":"Personalized service","df.d3.d":"Each operation is analyzed according to the company's needs, with clear guidance on scope, stages and points of attention.",
+  "df.d4.t":"Integrated follow-up","df.d4.d":"From origin to destination, your company informed about progress and the actions needed at each stage.",
+  "df.d5.t":"International network","df.d5.d":"International partners and representatives to support operations to and from different regions.",
+  "sv.s3.b2":"Door-to-Door operations","sv.s3.b3":"From quote to follow-up",
+  "sv.s4.b2":"Customs advisory","sv.s4.b3":"Documentation guidance",
+  "sv.s5.d":"Cargo storage integrated with your logistics operation.","sv.s5.b1":"Cargo storage","sv.s5.b2":"Integrated with the logistics operation",
+  "sv.s6.d":"National and international road transport, connecting the cargo to its final destination.","sv.s6.b1":"National and international road transport","sv.s6.b2":"Follow-up until delivery",
+  "sv.also":"We also work with:","sv.also.l":"international consulting, international sourcing, supplier inspection and auditing, and Door-to-Door operations.",
+  "ft.about":"Foreign trade and integrated logistics since 2003. National and international solutions, from origin to destination."
+});
+Object.assign(window.I18N.es, {
+  "ab.p1":"NLG es una empresa de comercio exterior y logística integrada con sede en Santos, Brasil, activa desde 2003. Hace más de 20 años apoya a empresas en operaciones de importación y exportación, con soluciones logísticas nacionales e internacionales.",
+  "ab.p3":"Actuamos como socio estratégico de las empresas: atención personalizada, red de socios y representantes internacionales y seguimiento integrado, del origen al destino.",
+  "df.d1.d":"Más de 20 años de actuación en operaciones de comercio exterior, para identificar puntos de atención y orientar decisiones de importación y exportación.",
+  "df.d3.t":"Atención personalizada","df.d3.d":"Cada operación se analiza según la necesidad de la empresa, con orientación clara sobre alcance, etapas y puntos de atención.",
+  "df.d4.t":"Seguimiento integrado","df.d4.d":"Del origen al destino, su empresa informada sobre el avance y las gestiones necesarias en cada fase.",
+  "df.d5.t":"Red internacional","df.d5.d":"Socios y representantes internacionales para apoyar operaciones desde y hacia diferentes regiones.",
+  "sv.s3.b2":"Operaciones Door-to-Door","sv.s3.b3":"De la cotización al seguimiento",
+  "sv.s4.b2":"Asesoría aduanera","sv.s4.b3":"Orientación documental",
+  "sv.s5.d":"Almacenaje de cargas integrado a su operación logística.","sv.s5.b1":"Almacenaje de cargas","sv.s5.b2":"Integrado a la operación logística",
+  "sv.s6.d":"Transporte terrestre nacional e internacional, conectando la carga con el destino final.","sv.s6.b1":"Transporte terrestre nacional e internacional","sv.s6.b2":"Seguimiento hasta la entrega",
+  "sv.also":"También trabajamos con:","sv.also.l":"consultoría internacional, sourcing internacional, inspección y auditoría de proveedores y operaciones Door-to-Door.",
+  "ft.about":"Comercio exterior y logística integrada desde 2003. Soluciones nacionales e internacionales, del origen al destino."
+});
