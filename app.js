@@ -127,10 +127,12 @@ function validate() {
   check("#f-svc", v => v ? "" : "err.sel");
   check("#f-name", v => v ? "" : "err.req");
   check("#f-company", v => v ? "" : "err.req");
+  check("#f-op", v => v ? "" : "err.sel");
+  ["#f-goods", "#f-from", "#f-to", "#f-phone", "#f-msg"].forEach(id => check(id, v => v ? "" : "err.req"));
   check("#f-email", v => !v ? "err.req" : (EMAIL_RE.test(v) ? "" : "err.email"));
   return first;
 }
-$$("input[required],select[required]", form).forEach(i => i.addEventListener("blur", () => { if (i.value || i.closest(".field").classList.contains("invalid")) validate(); }));
+$$("input[required],select[required],textarea[required]", form).forEach(i => i.addEventListener("blur", () => { if (i.value || i.closest(".field").classList.contains("invalid")) validate(); }));
 
 form.addEventListener("submit", e => {
   e.preventDefault();

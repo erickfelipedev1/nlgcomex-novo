@@ -822,3 +822,5 @@ header :focus-visible,.hero :focus-visible,.strip :focus-visible,.world :focus-v
 .wa-fab:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .wa-fab svg{width:32px;height:32px}
 @media (max-width:640px){.wa-fab{width:54px;height:54px}}
+
+.field.invalid textarea{border-color:#b3261e}

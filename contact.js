@@ -24,6 +24,8 @@
     chk("#f-svc", function (v) { return v ? "" : "sel"; });
     chk("#f-name", function (v) { return v ? "" : "req"; });
     chk("#f-company", function (v) { return v ? "" : "req"; });
+    chk("#f-op", function (v) { return v ? "" : "sel"; });
+    ["#f-goods", "#f-from", "#f-to", "#f-phone", "#f-msg"].forEach(function (id) { chk(id, function (v) { return v ? "" : "req"; }); });
     chk("#f-email", function (v) { return !v ? "req" : (EMAIL_RE.test(v) ? "" : "email"); });
     return first;
   }

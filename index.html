@@ -325,13 +325,13 @@
               <option value="orientacao" data-i18n="o.7">Preciso de orientação</option>
             </select><span class="err" id="e-svc" role="alert"></span></div>
           <div class="two">
-            <div class="field"><label for="f-op"><span data-i18n="f.op">Tipo de operação</span> <i class="opt" data-i18n="f.opt">(opcional)</i></label>
-              <select id="f-op" name="op"><option value="" data-i18n="f.sel">Selecione</option><option value="importacao" data-i18n="o.imp">Importação</option><option value="exportacao" data-i18n="o.exp">Exportação</option></select></div>
-            <div class="field"><label for="f-goods"><span data-i18n="f.goods">Tipo de mercadoria</span> <i class="opt" data-i18n="f.opt">(opcional)</i></label><input id="f-goods" name="goods" autocomplete="off"></div>
+            <div class="field"><label for="f-op"><span data-i18n="f.op">Tipo de operação</span> <i class="req" aria-hidden="true">*</i></label>
+              <select required aria-describedby="e-op" id="f-op" name="op"><option value="" data-i18n="f.sel">Selecione</option><option value="importacao" data-i18n="o.imp">Importação</option><option value="exportacao" data-i18n="o.exp">Exportação</option></select><span class="err" id="e-op" role="alert"></span></div>
+            <div class="field"><label for="f-goods"><span data-i18n="f.goods">Tipo de mercadoria</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-goods" id="f-goods" name="goods" autocomplete="off"><span class="err" id="e-goods" role="alert"></span></div>
           </div>
           <div class="two">
-            <div class="field"><label for="f-from"><span data-i18n="f.from">Origem</span> <i class="opt" data-i18n="f.opt">(opcional)</i></label><input id="f-from" name="from" autocomplete="off" data-i18n-ph="f.from.ph" placeholder="Ex.: Xangai, China"></div>
-            <div class="field"><label for="f-to"><span data-i18n="f.to">Destino</span> <i class="opt" data-i18n="f.opt">(opcional)</i></label><input id="f-to" name="to" autocomplete="off" data-i18n-ph="f.to.ph" placeholder="Ex.: Santos, Brasil"></div>
+            <div class="field"><label for="f-from"><span data-i18n="f.from">Origem</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-from" id="f-from" name="from" autocomplete="off" data-i18n-ph="f.from.ph" placeholder="Ex.: Xangai, China"><span class="err" id="e-from" role="alert"></span></div>
+            <div class="field"><label for="f-to"><span data-i18n="f.to">Destino</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-to" id="f-to" name="to" autocomplete="off" data-i18n-ph="f.to.ph" placeholder="Ex.: Santos, Brasil"><span class="err" id="e-to" role="alert"></span></div>
           </div>
         </fieldset>
         <fieldset>
@@ -342,9 +342,9 @@
           </div>
           <div class="two">
             <div class="field"><label for="f-email"><span data-i18n="f.email">E-mail</span> <i class="req" aria-hidden="true">*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" aria-describedby="e-email"><span class="err" id="e-email" role="alert"></span></div>
-            <div class="field"><label for="f-phone"><span data-i18n="f.phone">WhatsApp ou telefone</span> <i class="opt" data-i18n="f.opt">(opcional)</i></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-phone"><span data-i18n="f.phone">WhatsApp ou telefone</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-phone" id="f-phone" name="phone" type="tel" autocomplete="tel"><span class="err" id="e-phone" role="alert"></span></div>
           </div>
-          <div class="field"><label for="f-msg"><span data-i18n="f.msg">Conte um pouco sobre sua operação</span> <i class="opt" data-i18n="f.opt">(opcional)</i></label><textarea id="f-msg" name="msg" rows="3"></textarea><small class="hint" data-i18n="f.hint">Se possível, informe peso, volume e o prazo desejado.</small></div>
+          <div class="field"><label for="f-msg"><span data-i18n="f.msg">Conte um pouco sobre sua operação</span> <i class="req" aria-hidden="true">*</i></label><textarea required aria-describedby="e-msg" id="f-msg" name="msg" rows="3"></textarea><span class="err" id="e-msg" role="alert"></span><small class="hint" data-i18n="f.hint">Se possível, informe peso, volume e o prazo desejado.</small></div>
         </fieldset>
         <button class="btn btn-primary btn-block" type="submit" id="submitBtn" data-i18n="f.btn">Solicitar contato</button>
         <p class="form-note" data-i18n="f.note">Ao enviar, abriremos o seu aplicativo de e-mail com a mensagem pronta para a NLG.</p>
