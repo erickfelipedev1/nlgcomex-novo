@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   var CONTACT_EMAIL = "contato@nlgcomex.com.br";
-  var SVC = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", orientacao: "Preciso de orientação" };
+  var SVC = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", armazem: "Armazém de cargas", rodoviario: "Transporte rodoviário", orientacao: "Preciso de orientação" };
   var OP = { importacao: "Importação", exportacao: "Exportação" };
   var MSG = { req: "Preencha este campo.", email: "Informe um e-mail válido, por exemplo nome@empresa.com.", sel: "Selecione uma opção." };
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

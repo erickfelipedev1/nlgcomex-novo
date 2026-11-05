@@ -111,7 +111,7 @@ $$("[data-svc],[data-op]").forEach(a => a.addEventListener("click", () => {
 
 /* ===== Formulário de cotação (abre o e-mail do usuário) ===== */
 const form = $("#contactForm");
-const SVC_PT = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", orientacao: "Preciso de orientação" };
+const SVC_PT = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", armazem: "Armazém de cargas", rodoviario: "Transporte rodoviário", orientacao: "Preciso de orientação" };
 const OP_PT = { importacao: "Importação", exportacao: "Exportação" };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 

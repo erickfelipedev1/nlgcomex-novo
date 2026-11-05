@@ -40,25 +40,27 @@
 
 <header id="top">
   <div class="container nav">
-    <div class="brand"><a href="#top" class="logo" aria-label="NLG Comex"><img src="img/logo-nlg-comex.webp" alt="NLG Comex" width="156" height="43"></a><span class="partner" title="Membro Twig e IATA"><img src="img/twig.svg" alt="Twig" width="52" height="23"><img class="p-iata" src="img/iata.svg" alt="IATA" width="26" height="27"></span></div>
+    <div class="brand"><a href="#top" class="logo" aria-label="NLG Comex"><img src="img/logo-nlg-comex.webp" alt="NLG Comex" width="156" height="43"></a></div>
     <nav class="menu" id="menu" aria-label="Principal" data-i18n-aria="a11y.nav">
       <a href="#solucoes" data-i18n="nav.solutions">Soluções</a>
       <a href="#como-trabalhamos" data-i18n="nav.how">Como trabalhamos</a>
+      <a href="#certificacoes" data-i18n="nav.certs">Certificações</a>
       <a href="#sobre" data-i18n="nav.about">Sobre nós</a>
       <a href="#blog" data-i18n="nav.blog">Blog</a>
       <a href="#contato" data-i18n="nav.contact">Contato</a>
       <div class="menu-cta">
-        <a href="#tracking" class="btn-ghost" data-i18n="nav.client">Área do cliente</a>
+        <a href="#tracking" class="btn-ghost" data-i18n="nav.client">NLG Tracking</a>
         <a href="#contato" class="btn btn-primary btn-sm" data-i18n="hd.quote">Solicitar cotação</a>
       </div>
     </nav>
     <div class="nav-right">
+      <a class="partner" href="#certificacoes" title="Agente IATA e credenciado TWIG"><img src="img/twig.svg" alt="TWIG" width="52" height="23"><img class="p-iata" src="img/iata.svg" alt="IATA" width="26" height="27"></a>
       <div class="lang" role="group" aria-label="Idioma">
         <button type="button" data-lang="pt" class="active" aria-pressed="true" title="Português"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="3" fill="#009C3B"/><path d="M14 3l10 7-10 7-10-7z" fill="#FFDF00"/><circle cx="14" cy="10" r="4" fill="#002776"/></svg><span>PT</span></button>
         <button type="button" data-lang="en" aria-pressed="false" title="English"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="3" fill="#fff"/><g fill="#B22234"><rect y="0" width="28" height="1.54"/><rect y="3.08" width="28" height="1.54"/><rect y="6.16" width="28" height="1.54"/><rect y="9.24" width="28" height="1.54"/><rect y="12.32" width="28" height="1.54"/><rect y="15.4" width="28" height="1.54"/><rect y="18.46" width="28" height="1.54"/></g><rect width="12" height="10.8" fill="#3C3B6E"/></svg><span>EN</span></button>
         <button type="button" data-lang="es" aria-pressed="false" title="Español"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="3" fill="#AA151B"/><rect y="5" width="28" height="10" fill="#F1BF00"/></svg><span>ES</span></button>
       </div>
-      <a href="#tracking" class="btn-ghost hide-md" data-i18n="nav.client">Área do cliente</a>
+      <a href="#tracking" class="btn-ghost hide-md" data-i18n="nav.client">NLG Tracking</a>
       <a href="#contato" class="btn btn-primary btn-sm hide-md" data-i18n="hd.quote">Solicitar cotação</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-i18n-aria="a11y.menu"><span></span><span></span><span></span></button>
     </div>
@@ -76,11 +78,15 @@
   <div class="container hero-inner hero-grid">
     <div class="hero-copy">
     <span class="eyebrow on-dark" data-i18n="hero.eyebrow">Importação, exportação e logística internacional</span>
-    <h1 id="hero-title" data-i18n-html="hero.title">Sua carga cruza fronteiras. Nossa atenção acompanha <span class="hl">cada etapa.</span></h1>
-    <p class="hero-sub" data-i18n="hero.text">Frete marítimo, frete aéreo, agenciamento de cargas e desembaraço aduaneiro, com acompanhamento próximo e clareza para decidir.</p>
+    <h1 id="hero-title" data-i18n-html="hero.title">Soluções estratégicas no <span class="hl">comércio exterior</span></h1>
+    <p class="hero-sub" data-i18n="hero.text">Sua carga com pontualidade, confiança e segurança. Da origem ao destino.</p>
     <div class="ctas">
       <a href="#contato" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Solicitar cotação</a>
       <a href="#tracking" class="btn btn-outline btn-lg" data-i18n="hero.cta2">Acompanhar carga</a>
+    </div>
+    <div class="hero-badges" aria-label="Certificações">
+      <img src="img/iata.svg" alt="IATA" width="40" height="42"><img src="img/twig.svg" alt="TWIG" width="70" height="31">
+      <span data-i18n="hero.badges">Agente IATA · Agente credenciado da TWIG</span>
     </div>
     </div>
   </div>
@@ -91,7 +97,7 @@
     <div class="strip-item"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="strip-lbl"><b data-i18n="st.hq.t">Sede em Santos, SP</b><span data-i18n="st.hq.d">Praça Antônio Teles, 12</span></div></div>
     <div class="strip-item"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20M4 16l2-8h12l2 8M9 8V4h6v4"/></svg><div class="strip-lbl"><b data-i18n="st.a.t">Importação e exportação</b><span data-i18n="st.a.d">Frete marítimo e aéreo</span></div></div>
     <div class="strip-item"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><div class="strip-lbl"><b data-i18n="st.c.t">Agenciamento de cargas</b><span data-i18n="st.c.d">e desembaraço aduaneiro</span></div></div>
-    <div class="strip-item"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="strip-lbl"><b data-i18n="st.d.t">NLG Tracking</b><span data-i18n="st.d.d">Acompanhamento para clientes</span></div></div>
+    <div class="strip-item"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="strip-lbl"><b data-i18n="st.d.t">NLG Tracking</b><span data-i18n="st.d.d">Sua carga em tempo real</span></div></div>
   </div>
 </section>
 
@@ -115,41 +121,29 @@
       <p class="lead" data-i18n="sv.text">Conheça as soluções da NLG, a partir de Santos/SP, para apoiar a movimentação internacional das suas mercadorias.</p>
     </div>
     <div class="svc-grid">
-      <article class="svc featured">
-        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s1.tag">Modal marítimo</span><img src="img/photos/svc-maritimo.webp" alt="Navio porta-contêineres visto de cima, em alto-mar" loading="lazy" decoding="async" width="900" height="506"></div>
-        <div class="svc-body"><h3><a class="svc-title-link" href="/frete-maritimo/" data-i18n="sv.s1.t">Frete marítimo internacional</a></h3><p data-i18n="sv.s1.d">Transporte adequado à sua carga e ao seu negócio, para importação e exportação.</p>
-        <ul class="ticks"><li data-i18n="sv.s1.b1">Rota e prazo avaliados</li><li data-i18n="sv.s1.b2">Custo e necessidade operacional equilibrados</li><li data-i18n="sv.s1.b3">Acompanhamento do embarque</li></ul>
-        <a href="#contato" class="svc-link" data-svc="maritimo" data-i18n="sv.s1.l">Cotar frete marítimo</a></div>
-      </article>
-      <article class="svc">
-        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s2.tag">Modal aéreo</span><img src="img/photos/svc-aereo.webp" alt="Avião de carga em pátio de aeroporto" loading="lazy" decoding="async" width="900" height="506"></div>
-        <div class="svc-body"><h3><a class="svc-title-link" href="/frete-aereo/" data-i18n="sv.s2.t">Frete aéreo internacional</a></h3><p data-i18n="sv.s2.d">Solução alinhada à urgência da operação, para importação e exportação.</p>
-        <ul class="ticks"><li data-i18n="sv.s2.b1">Disponibilidade de embarque avaliada</li><li data-i18n="sv.s2.b2">Custos e prazos com clareza</li><li data-i18n="sv.s2.b3">Acompanhamento das etapas</li></ul>
-        <a href="#contato" class="svc-link" data-svc="aereo" data-i18n="sv.s2.l">Cotar frete aéreo</a></div>
-      </article>
       <article class="svc">
         <div class="svc-art"><span class="svc-tag" data-i18n="sv.s3.tag">Agenciamento</span><img src="img/photos/svc-agenciamento.webp" alt="Terminal portuário com navio e pátio de contêineres" loading="lazy" decoding="async" width="900" height="506"></div>
-        <div class="svc-body"><h3><a class="svc-title-link" href="/agenciamento-de-cargas/" data-i18n="sv.s3.t">Agenciamento de cargas internacionais</a></h3><p data-i18n="sv.s3.d">Conectamos as etapas do transporte às necessidades do seu negócio.</p>
-        <ul class="ticks"><li data-i18n="sv.s3.b1">Interlocução com transportadores e parceiros</li><li data-i18n="sv.s3.b2">Da cotação ao acompanhamento</li><li data-i18n="sv.s3.b3">Fluxo de informações organizado</li></ul>
-        <a href="#contato" class="svc-link" data-svc="agenciamento" data-i18n="sv.s3.l">Solicitar agenciamento de cargas</a></div>
+        <div class="svc-body"><h3><a class="svc-title-link" href="/agenciamento-de-cargas/" data-i18n="sv.s3.t">Agenciamento de cargas</a></h3><p data-i18n="sv.s3.d">Conectamos as etapas do transporte às necessidades do seu negócio, por via marítima ou aérea.</p>
+        <ul class="ticks"><li data-i18n="sv.s3.b1">Frete marítimo e frete aéreo internacionais</li><li data-i18n="sv.s3.b2">Da cotação ao acompanhamento</li><li data-i18n="sv.s3.b3">Interlocução com transportadores e parceiros</li></ul>
+        <a href="#contato" class="svc-link" data-i18n="sv.s3.l">Solicitar agenciamento de cargas</a></div>
       </article>
       <article class="svc">
-        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s4.tag">Documental</span><img src="img/photos/svc-desembaraco.webp" alt="Armazém logístico com estruturas de armazenagem" loading="lazy" decoding="async" width="900" height="506"></div>
-        <div class="svc-body"><h3><a class="svc-title-link" href="/desembaraco-aduaneiro/" data-i18n="sv.s4.t">Desembaraço aduaneiro</a></h3><p data-i18n="sv.s4.d">Atenção aos detalhes em uma etapa essencial da sua operação.</p>
-        <ul class="ticks"><li data-i18n="sv.s4.b1">Orientação documental</li><li data-i18n="sv.s4.b2">Acompanhamento dos procedimentos</li><li data-i18n="sv.s4.b3">Pendências identificadas cedo</li></ul>
+        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s4.tag">Documental</span><img src="img/photos/svc-importacao.webp" alt="Guindastes de porto operando em um terminal de contêineres" loading="lazy" decoding="async" width="900" height="506"></div>
+        <div class="svc-body"><h3><a class="svc-title-link" href="/desembaraco-aduaneiro/" data-i18n="sv.s4.t">Desembaraço aduaneiro</a></h3><p data-i18n="sv.s4.d">Desembaraço em todos os portos e aeroportos do Brasil, com atenção aos detalhes dessa etapa essencial.</p>
+        <ul class="ticks"><li data-i18n="sv.s4.b1">Certificações do Inmetro, Anvisa e demais órgãos</li><li data-i18n="sv.s4.b2">Orientação documental</li><li data-i18n="sv.s4.b3">Pendências identificadas cedo</li></ul>
         <a href="#contato" class="svc-link" data-svc="desembaraco" data-i18n="sv.s4.l">Conversar sobre desembaraço</a></div>
       </article>
       <article class="svc">
-        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s5.tag">Importação</span><img src="img/photos/svc-importacao.webp" alt="Guindastes de porto operando em um terminal de contêineres" loading="lazy" decoding="async" width="900" height="506"></div>
-        <div class="svc-body"><h3><a class="svc-title-link" href="/importacao/" data-i18n="sv.s5.t">Suporte à importação</a></h3><p data-i18n="sv.s5.d">Mais clareza para organizar a chegada das suas mercadorias.</p>
-        <ul class="ticks"><li data-i18n="sv.s5.b1">Etapas da importação organizadas</li><li data-i18n="sv.s5.b2">Necessidades logísticas coordenadas</li><li data-i18n="sv.s5.b3">Orientação sobre o que providenciar</li></ul>
-        <a href="#contato" class="svc-link" data-svc="importacao" data-op="importacao" data-i18n="sv.s5.l">Planejar minha importação</a></div>
+        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s5.tag">Armazenagem</span><img src="img/photos/svc-desembaraco.webp" alt="Armazém logístico com estruturas de armazenagem" loading="lazy" decoding="async" width="900" height="506"></div>
+        <div class="svc-body"><h3><span data-i18n="sv.s5.t">Armazém de cargas</span></h3><p data-i18n="sv.s5.d">Armazenagem para apoiar a sua operação antes e depois do transporte.</p>
+        <ul class="ticks"><li data-i18n="sv.s5.b1">Guarda e controle da carga</li><li data-i18n="sv.s5.b2">Apoio à movimentação</li><li data-i18n="sv.s5.b3">Integrado ao restante da operação</li></ul>
+        <a href="#contato" class="svc-link" data-i18n="sv.s5.l">Falar sobre armazenagem</a></div>
       </article>
       <article class="svc">
-        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s6.tag">Exportação</span><img src="img/photos/svc-exportacao.webp" alt="Navio porta-contêineres saindo de um porto" loading="lazy" decoding="async" width="900" height="506"></div>
-        <div class="svc-body"><h3><a class="svc-title-link" href="/exportacao/" data-i18n="sv.s6.t">Suporte à exportação</a></h3><p data-i18n="sv.s6.d">Planejamento e acompanhamento para levar seus produtos a outros mercados.</p>
-        <ul class="ticks"><li data-i18n="sv.s6.b1">Atenção à documentação</li><li data-i18n="sv.s6.b2">Coordenação do embarque</li><li data-i18n="sv.s6.b3">Necessidades do destino consideradas</li></ul>
-        <a href="#contato" class="svc-link" data-svc="exportacao" data-op="exportacao" data-i18n="sv.s6.l">Planejar minha exportação</a></div>
+        <div class="svc-art"><span class="svc-tag" data-i18n="sv.s6.tag">Rodoviário</span><img src="img/photos/svc-exportacao.webp" alt="Navio porta-contêineres saindo de um porto" loading="lazy" decoding="async" width="900" height="506"></div>
+        <div class="svc-body"><h3><span data-i18n="sv.s6.t">Transporte rodoviário</span></h3><p data-i18n="sv.s6.d">Transporte rodoviário para levar a carga do porto ou aeroporto até o destino final.</p>
+        <ul class="ticks"><li data-i18n="sv.s6.b1">Coleta e entrega</li><li data-i18n="sv.s6.b2">Cobertura em todo o território nacional</li><li data-i18n="sv.s6.b3">Acompanhamento até a entrega</li></ul>
+        <a href="#contato" class="svc-link" data-i18n="sv.s6.l">Cotar transporte rodoviário</a></div>
       </article>
     </div>
   </div>
@@ -170,10 +164,19 @@
     <ul class="regions" aria-label="Regiões">
       <li data-i18n="wd.r1">Ásia</li><li data-i18n="wd.r2">Europa</li><li data-i18n="wd.r3">América do Norte</li><li data-i18n="wd.r4">América do Sul</li><li data-i18n="wd.r5">Oriente Médio</li><li data-i18n="wd.r6">África</li><li data-i18n="wd.r7">Oceania</li>
     </ul>
-    <h3 class="nets-title" data-i18n="wd.nets">Associações e redes internacionais</h3>
-    <div class="nets">
-      <div class="net"><div class="seal"><img src="img/iata.svg" alt="IATA" width="40" height="42" loading="lazy"></div><div><h3 data-i18n="members.iata.t">Membro IATA</h3><p data-i18n="members.iata.d">Associação Internacional de Transporte Aéreo (carga aérea).</p></div></div>
-      <div class="net"><div class="seal"><img src="img/twig.svg" alt="Twig" width="46" height="20" loading="lazy"></div><div><h3 data-i18n="members.tuig.t">Membro Twig</h3><p data-i18n="members.tuig.d">Rede internacional de agentes de carga.</p></div></div>
+  </div>
+</section>
+
+<section class="soft" id="certificacoes" aria-labelledby="ce-title">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow" data-i18n="ce.eyebrow">Certificações</span>
+      <h2 id="ce-title" data-i18n="ce.title">Agente IATA e agente credenciado da TWIG</h2>
+      <p class="lead" data-i18n="ce.text">Credenciais que ampliam o alcance e a segurança das operações da NLG, no ar e no mar.</p>
+    </div>
+    <div class="certs">
+      <article class="cert"><div class="cert-logo"><img src="img/iata.svg" alt="IATA" width="64" height="67" loading="lazy"></div><h3 data-i18n="ce.iata.t">Agente IATA</h3><p data-i18n="ce.iata.d">A IATA (Associação Internacional de Transporte Aéreo) reúne as companhias aéreas e define os padrões da carga aérea no mundo. Como agente IATA, a NLG está credenciada a operar o frete aéreo internacional com as companhias aéreas, seguindo os procedimentos e padrões do setor.</p></article>
+      <article class="cert"><div class="cert-logo"><img src="img/twig.svg" alt="TWIG" width="96" height="42" loading="lazy"></div><h3 data-i18n="ce.twig.t">Agente credenciado da TWIG</h3><p data-i18n="ce.twig.d">A TWIG é uma rede internacional de agentes de carga independentes. Como agente credenciado, a NLG conta com parceiros em diferentes regiões do mundo para apoiar importações e exportações, da origem ao destino.</p></article>
     </div>
   </div>
 </section>
@@ -182,12 +185,13 @@
   <div class="container">
     <div class="center">
       <span class="eyebrow">NLG Tracking</span>
-      <h2 id="tr-title" data-i18n="tr.title">Sua carga em movimento. Você acompanhando o caminho.</h2>
+      <h2 id="tr-title" data-i18n="tr.title">Acompanhe sua carga com o NLG Tracking</h2>
+      <p class="lead" data-i18n="tr.sub">NLG Tracking: acompanhe sua carga em qualquer lugar do mundo.</p>
     </div>
     <div class="journeys">
       <div class="journey client">
         <h3 data-i18n="tr.c.t">Já sou cliente</h3>
-        <p data-i18n="tr.c.d">Com o NLG Tracking, os clientes da NLG podem consultar a localização do seu contêiner durante o transporte marítimo.</p>
+        <p data-i18n="tr.c.d">Com o NLG Tracking, você acompanha o passo da sua carga e em que momento ela está, em tempo real, durante toda a sua operação.</p>
         <a class="btn btn-primary" id="trackBtn" href="#contato" data-i18n="tr.btn">Acessar NLG Tracking</a>
         <small data-i18n="tr.small">Acesso para clientes NLG.</small>
         <p class="track-note" id="trackNote" hidden data-i18n="tr.pending">O link de acesso será divulgado em breve. Enquanto isso, fale com nossa equipe.</p>
@@ -288,7 +292,7 @@
       <details><summary data-i18n="fq.q2">Qual a melhor opção para minha carga: frete marítimo ou aéreo?</summary><p data-i18n="fq.a2">A escolha depende do prazo desejado, do peso, do volume, das características da mercadoria e do orçamento disponível. Nossa equipe avalia essas informações para orientar sobre as alternativas adequadas à sua operação.</p></details>
       <details><summary data-i18n="fq.q3">O que é agenciamento de cargas internacionais?</summary><p data-i18n="fq.a3">É o serviço que organiza e coordena o transporte internacional de mercadorias, conectando a empresa aos transportadores e parceiros envolvidos. Pode abranger cotação de frete, reserva de espaço, orientação sobre documentos de transporte e acompanhamento do embarque, conforme o escopo contratado.</p></details>
       <details><summary data-i18n="fq.q4">Posso contratar apenas o frete ou o desembaraço aduaneiro?</summary><p data-i18n="fq.a4">Conte à nossa equipe de qual serviço você precisa. Avaliaremos o escopo da demanda para apresentar uma proposta compatível com a sua operação.</p></details>
-      <details><summary data-i18n="fq.q5">Como posso acompanhar meu contêiner durante o transporte?</summary><p data-i18n="fq.a5">Os clientes da NLG podem acessar o NLG Tracking para consultar a localização do contêiner durante o transporte marítimo. Para dúvidas sobre o acesso ou as informações da operação, entre em contato com nossa equipe.</p></details>
+      <details><summary data-i18n="fq.q5">Como posso acompanhar minha carga durante o transporte?</summary><p data-i18n="fq.a5">Os clientes da NLG podem acessar o NLG Tracking para acompanhar a carga, em tempo real, durante toda a operação. Para dúvidas sobre o acesso ou as informações da operação, entre em contato com nossa equipe.</p></details>
       <details><summary data-i18n="fq.q6">Quanto tempo leva uma operação?</summary><p data-i18n="fq.a6">O prazo varia conforme a rota, a disponibilidade de transporte, as características da mercadoria, a documentação e os procedimentos envolvidos. A estimativa é apresentada a partir da análise da operação.</p></details>
       <details><summary data-i18n="fq.q7">Como saber quais serviços minha empresa precisa contratar?</summary><p data-i18n="fq.a7">O primeiro passo é entender o que já está definido na negociação e quais responsabilidades cabem à sua empresa. Com essas informações, nossa equipe poderá orientar sobre o escopo necessário.</p></details>
     </div>
@@ -317,10 +321,9 @@
               <option value="" data-i18n="f.sel">Selecione</option>
               <option value="maritimo" data-i18n="o.1">Frete marítimo</option>
               <option value="aereo" data-i18n="o.2">Frete aéreo</option>
-              <option value="agenciamento" data-i18n="o.3">Agenciamento de cargas</option>
               <option value="desembaraco" data-i18n="o.4">Desembaraço aduaneiro</option>
-              <option value="importacao" data-i18n="o.5">Suporte à importação</option>
-              <option value="exportacao" data-i18n="o.6">Suporte à exportação</option>
+              <option value="armazem" data-i18n="o.5">Armazém de cargas</option>
+              <option value="rodoviario" data-i18n="o.6">Transporte rodoviário</option>
               <option value="orientacao" data-i18n="o.7">Preciso de orientação</option>
             </select><span class="err" id="e-svc" role="alert"></span></div>
           <div class="two">
@@ -366,25 +369,28 @@
       <div>
         <img class="flogo" src="img/logo-nlg-comex.webp" alt="NLG Comex" width="156" height="43" loading="lazy">
         <p data-i18n="ft.about">Frete marítimo, frete aéreo, agenciamento de cargas e soluções em comércio exterior com atenção à sua operação.</p>
+        <p class="foot-certs"><img src="img/iata.svg" alt="" width="22" height="23" loading="lazy"><span data-i18n="ft.iata">Agente IATA</span></p>
+        <p class="foot-certs"><img src="img/twig.svg" alt="" width="40" height="18" loading="lazy"><span data-i18n="ft.twig">Agente credenciado da TWIG</span></p>
         <div class="social">
           <a href="https://www.instagram.com/nowlogisticsgroup" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></a>
           <a href="https://www.youtube.com/@nowlogisticsgroup" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><path d="M9.8 15.5l5.7-3.5-5.7-3.5z"/></svg></a>
           <a href="https://www.linkedin.com/company/now-logistics-group" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
         </div>
       </div>
-      <nav aria-label="Soluções" data-i18n-aria="nav.solutions"><h3 data-i18n="nav.solutions">Soluções</h3><ul><li><a href="/frete-maritimo/" data-i18n="sv.s1.t">Frete marítimo internacional</a></li><li><a href="/frete-aereo/" data-i18n="sv.s2.t">Frete aéreo internacional</a></li><li><a href="/agenciamento-de-cargas/" data-i18n="sv.s3.t">Agenciamento de cargas internacionais</a></li><li><a href="/desembaraco-aduaneiro/" data-i18n="sv.s4.t">Desembaraço aduaneiro</a></li><li><a href="/importacao/" data-i18n="sv.s5.t">Suporte à importação</a></li><li><a href="/exportacao/" data-i18n="sv.s6.t">Suporte à exportação</a></li></ul></nav>
+      <nav aria-label="Soluções" data-i18n-aria="nav.solutions"><h3 data-i18n="nav.solutions">Soluções</h3><ul><li><a href="/agenciamento-de-cargas/" data-i18n="sv.s3.t">Agenciamento de cargas</a></li><li><a href="/desembaraco-aduaneiro/" data-i18n="sv.s4.t">Desembaraço aduaneiro</a></li><li><a href="#solucoes" data-i18n="sv.s5.t">Armazém de cargas</a></li><li><a href="#solucoes" data-i18n="sv.s6.t">Transporte rodoviário</a></li></ul></nav>
       <nav aria-label="Rodapé" data-i18n-aria="a11y.foot">
         <h3 data-i18n="ft.nav">Navegue</h3>
         <ul>
           <li><a href="#solucoes" data-i18n="nav.solutions">Soluções</a></li>
           <li><a href="#como-trabalhamos" data-i18n="nav.how">Como trabalhamos</a></li>
+          <li><a href="#certificacoes" data-i18n="nav.certs">Certificações</a></li>
           <li><a href="#sobre" data-i18n="nav.about">Sobre nós</a></li>
           <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
           <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
         </ul>
       </nav>
       <div>
-        <h3 data-i18n="ft.client">Área do cliente</h3>
+        <h3 data-i18n="ft.client">NLG Tracking</h3>
         <ul><li><a href="#tracking" data-i18n="tr.btn">Acessar NLG Tracking</a></li></ul>
       </div>
       <div>

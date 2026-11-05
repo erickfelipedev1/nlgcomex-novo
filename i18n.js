@@ -177,3 +177,45 @@ es: {
   "ft.about":"Flete marítimo, flete aéreo, agenciamiento de cargas y soluciones en comercio exterior con atención a su operación.","ft.nav":"Navegue","ft.client":"Área del cliente","ft.contact":"Contáctenos","ft.hours":"Atención: de 8 a 18 h","ft.privacy":"Política de Privacidad","ft.rights":"Todos los derechos reservados."
 }
 };
+
+/* Atualização de conteúdo (alterações do site): sobrescreve chaves acima. */
+Object.assign(window.I18N.en, {
+  "hero.title":"Strategic solutions in <span class='hl'>foreign trade</span>",
+  "hero.text":"Your cargo with punctuality, reliability and safety. From origin to destination.",
+  "hero.badges":"IATA agent · TWIG accredited agent",
+  "nav.certs":"Certifications","nav.client":"NLG Tracking","ft.client":"NLG Tracking",
+  "ft.iata":"IATA agent","ft.twig":"TWIG accredited agent",
+  "st.d.d":"Your cargo in real time",
+  "tr.title":"Track your cargo with NLG Tracking","tr.sub":"NLG Tracking: follow your cargo anywhere in the world.",
+  "tr.c.d":"With NLG Tracking, you follow your cargo's progress and where it is, in real time, throughout your entire operation.",
+  "fq.q5":"How can I track my cargo during transport?",
+  "fq.a5":"NLG clients can access NLG Tracking to follow the cargo in real time throughout the operation. For questions about access or operation information, contact our team.",
+  "sv.s3.t":"Cargo forwarding","sv.s3.d":"We connect the transport stages to the needs of your business, by sea or by air.","sv.s3.b1":"International ocean and air freight","sv.s3.b2":"From quote to follow-up","sv.s3.b3":"Liaison with carriers and partners","sv.s3.l":"Request cargo forwarding",
+  "sv.s4.d":"Clearance at every port and airport in Brazil, with attention to detail in an essential stage.","sv.s4.b1":"Inmetro, Anvisa and other agency certifications","sv.s4.b2":"Documentation guidance","sv.s4.b3":"Pending issues spotted early",
+  "sv.s5.tag":"Storage","sv.s5.t":"Cargo warehouse","sv.s5.d":"Storage to support your operation before and after transport.","sv.s5.b1":"Cargo custody and control","sv.s5.b2":"Handling support","sv.s5.b3":"Integrated with the rest of the operation","sv.s5.l":"Talk about storage",
+  "sv.s6.tag":"Road","sv.s6.t":"Road transport","sv.s6.d":"Road transport to take the cargo from the port or airport to its final destination.","sv.s6.b1":"Pickup and delivery","sv.s6.b2":"Coverage across the national territory","sv.s6.b3":"Follow-up until delivery","sv.s6.l":"Quote road transport",
+  "ce.eyebrow":"Certifications","ce.title":"IATA agent and TWIG accredited agent","ce.text":"Credentials that extend the reach and safety of NLG's operations, by air and by sea.",
+  "ce.iata.t":"IATA agent","ce.iata.d":"IATA (International Air Transport Association) brings together airlines and sets the standards for air cargo worldwide. As an IATA agent, NLG is accredited to handle international air freight with airlines, following industry procedures and standards.",
+  "ce.twig.t":"TWIG accredited agent","ce.twig.d":"TWIG is an international network of independent freight agents. As an accredited agent, NLG relies on partners in different regions of the world to support imports and exports, from origin to destination.",
+  "o.5":"Cargo warehouse","o.6":"Road transport"
+});
+Object.assign(window.I18N.es, {
+  "hero.title":"Soluciones estratégicas en <span class='hl'>comercio exterior</span>",
+  "hero.text":"Su carga con puntualidad, confianza y seguridad. Del origen al destino.",
+  "hero.badges":"Agente IATA · Agente acreditado de TWIG",
+  "nav.certs":"Certificaciones","nav.client":"NLG Tracking","ft.client":"NLG Tracking",
+  "ft.iata":"Agente IATA","ft.twig":"Agente acreditado de TWIG",
+  "st.d.d":"Su carga en tiempo real",
+  "tr.title":"Siga su carga con NLG Tracking","tr.sub":"NLG Tracking: siga su carga desde cualquier lugar del mundo.",
+  "tr.c.d":"Con NLG Tracking, usted sigue el avance de su carga y en qué momento se encuentra, en tiempo real, durante toda su operación.",
+  "fq.q5":"¿Cómo puedo seguir mi carga durante el transporte?",
+  "fq.a5":"Los clientes de NLG pueden acceder a NLG Tracking para seguir la carga en tiempo real durante toda la operación. Para dudas sobre el acceso o la información de la operación, comuníquese con nuestro equipo.",
+  "sv.s3.t":"Agenciamiento de cargas","sv.s3.d":"Conectamos las etapas del transporte con las necesidades de su negocio, por vía marítima o aérea.","sv.s3.b1":"Flete marítimo y aéreo internacionales","sv.s3.b2":"De la cotización al seguimiento","sv.s3.b3":"Enlace con transportistas y socios","sv.s3.l":"Solicitar agenciamiento de cargas",
+  "sv.s4.d":"Despacho en todos los puertos y aeropuertos de Brasil, con atención a los detalles de una etapa esencial.","sv.s4.b1":"Certificaciones de Inmetro, Anvisa y otros organismos","sv.s4.b2":"Orientación documental","sv.s4.b3":"Pendientes identificados a tiempo",
+  "sv.s5.tag":"Almacenaje","sv.s5.t":"Almacén de cargas","sv.s5.d":"Almacenaje para apoyar su operación antes y después del transporte.","sv.s5.b1":"Custodia y control de la carga","sv.s5.b2":"Apoyo en la movilización","sv.s5.b3":"Integrado al resto de la operación","sv.s5.l":"Hablar sobre almacenaje",
+  "sv.s6.tag":"Terrestre","sv.s6.t":"Transporte terrestre","sv.s6.d":"Transporte terrestre para llevar la carga del puerto o aeropuerto hasta el destino final.","sv.s6.b1":"Recolección y entrega","sv.s6.b2":"Cobertura en todo el territorio nacional","sv.s6.b3":"Seguimiento hasta la entrega","sv.s6.l":"Cotizar transporte terrestre",
+  "ce.eyebrow":"Certificaciones","ce.title":"Agente IATA y agente acreditado de TWIG","ce.text":"Credenciales que amplían el alcance y la seguridad de las operaciones de NLG, por aire y por mar.",
+  "ce.iata.t":"Agente IATA","ce.iata.d":"IATA (Asociación Internacional de Transporte Aéreo) reúne a las aerolíneas y define los estándares de la carga aérea en el mundo. Como agente IATA, NLG está acreditada para operar el flete aéreo internacional con las aerolíneas, siguiendo los procedimientos y estándares del sector.",
+  "ce.twig.t":"Agente acreditado de TWIG","ce.twig.d":"TWIG es una red internacional de agentes de carga independientes. Como agente acreditado, NLG cuenta con socios en diferentes regiones del mundo para apoyar importaciones y exportaciones, del origen al destino.",
+  "o.5":"Almacén de cargas","o.6":"Transporte terrestre"
+});
