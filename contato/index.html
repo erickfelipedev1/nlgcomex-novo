@@ -28,10 +28,10 @@
       <a href="/sobre/">Sobre nós</a>
       <a href="/blog/">Blog</a>
       <a href="/contato/">Contato</a>
-      <div class="menu-cta"><a href="/#tracking" class="btn-ghost">Área do cliente</a><a href="/contato/" class="btn btn-primary btn-sm">Solicitar cotação</a></div>
+      <div class="menu-cta"><a href="/#tracking" class="btn-ghost">NLG Tracking</a><a href="/contato/" class="btn btn-primary btn-sm">Solicitar cotação</a></div>
     </nav>
     <div class="nav-right">
-      <a href="/#tracking" class="btn-ghost hide-md">Área do cliente</a>
+      <a href="/#tracking" class="btn-ghost hide-md">NLG Tracking</a>
       <a href="/contato/" class="btn btn-primary btn-sm hide-md">Solicitar cotação</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
@@ -60,20 +60,19 @@
               <option value="">Selecione</option>
               <option value="maritimo">Frete marítimo</option>
               <option value="aereo">Frete aéreo</option>
-              <option value="agenciamento">Agenciamento de cargas</option>
               <option value="desembaraco">Desembaraço aduaneiro</option>
-              <option value="importacao">Suporte à importação</option>
-              <option value="exportacao">Suporte à exportação</option>
+              <option value="armazem">Armazém de cargas</option>
+              <option value="rodoviario">Transporte rodoviário</option>
               <option value="orientacao">Preciso de orientação</option>
             </select><span class="err" id="e-svc" role="alert"></span></div>
           <div class="two">
-            <div class="field"><label for="f-op"><span>Tipo de operação</span> <i class="opt">(opcional)</i></label>
-              <select id="f-op" name="op"><option value="">Selecione</option><option value="importacao">Importação</option><option value="exportacao">Exportação</option></select></div>
-            <div class="field"><label for="f-goods"><span>Tipo de mercadoria</span> <i class="opt">(opcional)</i></label><input id="f-goods" name="goods" autocomplete="off"></div>
+            <div class="field"><label for="f-op"><span>Tipo de operação</span> <i class="req" aria-hidden="true">*</i></label>
+              <select required aria-describedby="e-op" id="f-op" name="op"><option value="">Selecione</option><option value="importacao">Importação</option><option value="exportacao">Exportação</option></select><span class="err" id="e-op" role="alert"></span></div>
+            <div class="field"><label for="f-goods"><span>Tipo de mercadoria</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-goods" id="f-goods" name="goods" autocomplete="off"><span class="err" id="e-goods" role="alert"></span></div>
           </div>
           <div class="two">
-            <div class="field"><label for="f-from"><span>Origem</span> <i class="opt">(opcional)</i></label><input id="f-from" name="from" autocomplete="off" placeholder="Ex.: Xangai, China"></div>
-            <div class="field"><label for="f-to"><span>Destino</span> <i class="opt">(opcional)</i></label><input id="f-to" name="to" autocomplete="off" placeholder="Ex.: Santos, Brasil"></div>
+            <div class="field"><label for="f-from"><span>Origem</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-from" id="f-from" name="from" autocomplete="off" placeholder="Ex.: Xangai, China"><span class="err" id="e-from" role="alert"></span></div>
+            <div class="field"><label for="f-to"><span>Destino</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-to" id="f-to" name="to" autocomplete="off" placeholder="Ex.: Santos, Brasil"><span class="err" id="e-to" role="alert"></span></div>
           </div>
         </fieldset>
         <fieldset>
@@ -84,9 +83,9 @@
           </div>
           <div class="two">
             <div class="field"><label for="f-email"><span>E-mail</span> <i class="req" aria-hidden="true">*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" aria-describedby="e-email"><span class="err" id="e-email" role="alert"></span></div>
-            <div class="field"><label for="f-phone"><span>WhatsApp ou telefone</span> <i class="opt">(opcional)</i></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-phone"><span>WhatsApp ou telefone</span> <i class="req" aria-hidden="true">*</i></label><input required aria-describedby="e-phone" id="f-phone" name="phone" type="tel" autocomplete="tel"><span class="err" id="e-phone" role="alert"></span></div>
           </div>
-          <div class="field"><label for="f-msg"><span>Conte um pouco sobre sua operação</span> <i class="opt">(opcional)</i></label><textarea id="f-msg" name="msg" rows="3"></textarea><small class="hint">Se possível, informe peso, volume e o prazo desejado.</small></div>
+          <div class="field"><label for="f-msg"><span>Conte um pouco sobre sua operação</span> <i class="req" aria-hidden="true">*</i></label><textarea required aria-describedby="e-msg" id="f-msg" name="msg" rows="3"></textarea><span class="err" id="e-msg" role="alert"></span><small class="hint">Se possível, informe peso, volume e o prazo desejado.</small></div>
         </fieldset>
         <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Solicitar contato</button>
         <p class="form-note">Ao enviar, abriremos o seu aplicativo de e-mail com a mensagem pronta para a NLG.</p>
@@ -119,5 +118,6 @@
 </footer>
 <script src="/page.js"></script>
 <script src="/contact.js"></script>
+<script src="/wa.js"></script>
 </body>
 </html>

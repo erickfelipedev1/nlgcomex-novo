@@ -5,8 +5,8 @@
 /* ===== Configuração (dados da empresa) ===== */
 // URL do NLG Tracking. Vazio = o botão leva ao contato e mostra um aviso.
 const TRACKING_URL = "";
-// WhatsApp comercial, só dígitos com DDI+DDD (ex.: "5513999999999"). Vazio = botão oculto.
-const WA_NUMBER = "";
+// WhatsApp comercial, só dígitos com DDI+DDD (ex.: "5513999999999"). Definido em wa.js. Vazio = botão oculto.
+const WA_NUMBER = window.NLG_WA_NUMBER || "";
 const CONTACT_EMAIL = "contato@nlgcomex.com.br";
 
 const $ = (s, r) => (r || document).querySelector(s);
@@ -111,7 +111,7 @@ $$("[data-svc],[data-op]").forEach(a => a.addEventListener("click", () => {
 
 /* ===== Formulário de cotação (abre o e-mail do usuário) ===== */
 const form = $("#contactForm");
-const SVC_PT = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", orientacao: "Preciso de orientação" };
+const SVC_PT = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", armazem: "Armazém de cargas", rodoviario: "Transporte rodoviário", orientacao: "Preciso de orientação" };
 const OP_PT = { importacao: "Importação", exportacao: "Exportação" };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -127,10 +127,12 @@ function validate() {
   check("#f-svc", v => v ? "" : "err.sel");
   check("#f-name", v => v ? "" : "err.req");
   check("#f-company", v => v ? "" : "err.req");
+  check("#f-op", v => v ? "" : "err.sel");
+  ["#f-goods", "#f-from", "#f-to", "#f-phone", "#f-msg"].forEach(id => check(id, v => v ? "" : "err.req"));
   check("#f-email", v => !v ? "err.req" : (EMAIL_RE.test(v) ? "" : "err.email"));
   return first;
 }
-$$("input[required],select[required]", form).forEach(i => i.addEventListener("blur", () => { if (i.value || i.closest(".field").classList.contains("invalid")) validate(); }));
+$$("input[required],select[required],textarea[required]", form).forEach(i => i.addEventListener("blur", () => { if (i.value || i.closest(".field").classList.contains("invalid")) validate(); }));
 
 form.addEventListener("submit", e => {
   e.preventDefault();

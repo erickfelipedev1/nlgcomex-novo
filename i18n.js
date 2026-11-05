@@ -177,3 +177,75 @@ es: {
   "ft.about":"Flete marítimo, flete aéreo, agenciamiento de cargas y soluciones en comercio exterior con atención a su operación.","ft.nav":"Navegue","ft.client":"Área del cliente","ft.contact":"Contáctenos","ft.hours":"Atención: de 8 a 18 h","ft.privacy":"Política de Privacidad","ft.rights":"Todos los derechos reservados."
 }
 };
+
+/* Atualização de conteúdo (alterações do site): sobrescreve chaves acima. */
+Object.assign(window.I18N.en, {
+  "hero.title":"Strategic solutions in <span class='hl'>foreign trade</span>",
+  "hero.text":"Your cargo with punctuality, reliability and safety. From origin to destination.",
+  "hero.badges":"NLG is a member of",
+  "nav.certs":"Certifications","nav.client":"NLG Tracking","ft.client":"NLG Tracking",
+  "ft.iata":"IATA agent","ft.twig":"TWIG accredited agent",
+  "st.d.d":"Your cargo in real time",
+  "tr.title":"Track your cargo with NLG Tracking","tr.sub":"NLG Tracking: follow your cargo anywhere in the world.",
+  "tr.c.d":"With NLG Tracking, you follow your cargo's progress and where it is, in real time, throughout your entire operation.",
+  "fq.q5":"How can I track my cargo during transport?",
+  "fq.a5":"NLG clients can access NLG Tracking to follow the cargo in real time throughout the operation. For questions about access or operation information, contact our team.",
+  "sv.s3.t":"Cargo forwarding","sv.s3.d":"We connect the transport stages to the needs of your business, by sea or by air.","sv.s3.b1":"International ocean and air freight","sv.s3.b2":"From quote to follow-up","sv.s3.b3":"Liaison with carriers and partners","sv.s3.l":"Request cargo forwarding",
+  "sv.s4.d":"Clearance at every port and airport in Brazil, with attention to detail in an essential stage.","sv.s4.b1":"Inmetro, Anvisa and other agency certifications","sv.s4.b2":"Documentation guidance","sv.s4.b3":"Pending issues spotted early",
+  "sv.s5.tag":"Storage","sv.s5.t":"Cargo warehouse","sv.s5.d":"Storage to support your operation before and after transport.","sv.s5.b1":"Cargo custody and control","sv.s5.b2":"Handling support","sv.s5.b3":"Integrated with the rest of the operation","sv.s5.l":"Talk about storage",
+  "sv.s6.tag":"Road","sv.s6.t":"Road transport","sv.s6.d":"Road transport to take the cargo from the port or airport to its final destination.","sv.s6.b1":"Pickup and delivery","sv.s6.b2":"Coverage across the national territory","sv.s6.b3":"Follow-up until delivery","sv.s6.l":"Quote road transport",
+  "ce.eyebrow":"Certifications","ce.title":"IATA agent and TWIG accredited agent","ce.text":"Credentials that extend the reach and safety of NLG's operations, by air and by sea.",
+  "ce.iata.t":"IATA agent","ce.iata.d":"IATA (International Air Transport Association) brings together airlines and sets the standards for air cargo worldwide. As an IATA agent, NLG is accredited to handle international air freight with airlines, following industry procedures and standards.",
+  "ce.twig.t":"TWIG accredited agent","ce.twig.d":"TWIG is an international network of independent freight agents. As an accredited agent, NLG relies on partners in different regions of the world to support imports and exports, from origin to destination.",
+  "o.5":"Cargo warehouse","o.6":"Road transport"
+});
+Object.assign(window.I18N.es, {
+  "hero.title":"Soluciones estratégicas en <span class='hl'>comercio exterior</span>",
+  "hero.text":"Su carga con puntualidad, confianza y seguridad. Del origen al destino.",
+  "hero.badges":"NLG es miembro de",
+  "nav.certs":"Certificaciones","nav.client":"NLG Tracking","ft.client":"NLG Tracking",
+  "ft.iata":"Agente IATA","ft.twig":"Agente acreditado de TWIG",
+  "st.d.d":"Su carga en tiempo real",
+  "tr.title":"Siga su carga con NLG Tracking","tr.sub":"NLG Tracking: siga su carga desde cualquier lugar del mundo.",
+  "tr.c.d":"Con NLG Tracking, usted sigue el avance de su carga y en qué momento se encuentra, en tiempo real, durante toda su operación.",
+  "fq.q5":"¿Cómo puedo seguir mi carga durante el transporte?",
+  "fq.a5":"Los clientes de NLG pueden acceder a NLG Tracking para seguir la carga en tiempo real durante toda la operación. Para dudas sobre el acceso o la información de la operación, comuníquese con nuestro equipo.",
+  "sv.s3.t":"Agenciamiento de cargas","sv.s3.d":"Conectamos las etapas del transporte con las necesidades de su negocio, por vía marítima o aérea.","sv.s3.b1":"Flete marítimo y aéreo internacionales","sv.s3.b2":"De la cotización al seguimiento","sv.s3.b3":"Enlace con transportistas y socios","sv.s3.l":"Solicitar agenciamiento de cargas",
+  "sv.s4.d":"Despacho en todos los puertos y aeropuertos de Brasil, con atención a los detalles de una etapa esencial.","sv.s4.b1":"Certificaciones de Inmetro, Anvisa y otros organismos","sv.s4.b2":"Orientación documental","sv.s4.b3":"Pendientes identificados a tiempo",
+  "sv.s5.tag":"Almacenaje","sv.s5.t":"Almacén de cargas","sv.s5.d":"Almacenaje para apoyar su operación antes y después del transporte.","sv.s5.b1":"Custodia y control de la carga","sv.s5.b2":"Apoyo en la movilización","sv.s5.b3":"Integrado al resto de la operación","sv.s5.l":"Hablar sobre almacenaje",
+  "sv.s6.tag":"Terrestre","sv.s6.t":"Transporte terrestre","sv.s6.d":"Transporte terrestre para llevar la carga del puerto o aeropuerto hasta el destino final.","sv.s6.b1":"Recolección y entrega","sv.s6.b2":"Cobertura en todo el territorio nacional","sv.s6.b3":"Seguimiento hasta la entrega","sv.s6.l":"Cotizar transporte terrestre",
+  "ce.eyebrow":"Certificaciones","ce.title":"Agente IATA y agente acreditado de TWIG","ce.text":"Credenciales que amplían el alcance y la seguridad de las operaciones de NLG, por aire y por mar.",
+  "ce.iata.t":"Agente IATA","ce.iata.d":"IATA (Asociación Internacional de Transporte Aéreo) reúne a las aerolíneas y define los estándares de la carga aérea en el mundo. Como agente IATA, NLG está acreditada para operar el flete aéreo internacional con las aerolíneas, siguiendo los procedimientos y estándares del sector.",
+  "ce.twig.t":"Agente acreditado de TWIG","ce.twig.d":"TWIG es una red internacional de agentes de carga independientes. Como agente acreditado, NLG cuenta con socios en diferentes regiones del mundo para apoyar importaciones y exportaciones, del origen al destino.",
+  "o.5":"Almacén de cargas","o.6":"Transporte terrestre"
+});
+
+/* Copy institucional (comércio exterior e logística integrada desde 2003) */
+Object.assign(window.I18N.en, {
+  "ab.p1":"NLG is a foreign trade and integrated logistics company headquartered in Santos, Brazil, active since 2003. For more than 20 years it has supported companies in import and export operations, with national and international logistics solutions.",
+  "ab.p3":"We act as a strategic partner to companies: personalized service, a network of international partners and representatives, and integrated follow-up from origin to destination.",
+  "df.d1.d":"More than 20 years in foreign trade operations, to spot points of attention and guide import and export decisions.",
+  "df.d3.t":"Personalized service","df.d3.d":"Each operation is analyzed according to the company's needs, with clear guidance on scope, stages and points of attention.",
+  "df.d4.t":"Integrated follow-up","df.d4.d":"From origin to destination, your company informed about progress and the actions needed at each stage.",
+  "df.d5.t":"International network","df.d5.d":"International partners and representatives to support operations to and from different regions.",
+  "sv.s3.b2":"Door-to-Door operations","sv.s3.b3":"From quote to follow-up",
+  "sv.s4.b2":"Customs advisory","sv.s4.b3":"Documentation guidance",
+  "sv.s5.d":"Cargo storage integrated with your logistics operation.","sv.s5.b1":"Cargo storage","sv.s5.b2":"Integrated with the logistics operation",
+  "sv.s6.d":"National and international road transport, connecting the cargo to its final destination.","sv.s6.b1":"National and international road transport","sv.s6.b2":"Follow-up until delivery",
+  "sv.also":"We also work with:","sv.also.l":"international consulting, international sourcing, supplier inspection and auditing, and Door-to-Door operations.",
+  "ft.about":"Foreign trade and integrated logistics since 2003. National and international solutions, from origin to destination."
+});
+Object.assign(window.I18N.es, {
+  "ab.p1":"NLG es una empresa de comercio exterior y logística integrada con sede en Santos, Brasil, activa desde 2003. Hace más de 20 años apoya a empresas en operaciones de importación y exportación, con soluciones logísticas nacionales e internacionales.",
+  "ab.p3":"Actuamos como socio estratégico de las empresas: atención personalizada, red de socios y representantes internacionales y seguimiento integrado, del origen al destino.",
+  "df.d1.d":"Más de 20 años de actuación en operaciones de comercio exterior, para identificar puntos de atención y orientar decisiones de importación y exportación.",
+  "df.d3.t":"Atención personalizada","df.d3.d":"Cada operación se analiza según la necesidad de la empresa, con orientación clara sobre alcance, etapas y puntos de atención.",
+  "df.d4.t":"Seguimiento integrado","df.d4.d":"Del origen al destino, su empresa informada sobre el avance y las gestiones necesarias en cada fase.",
+  "df.d5.t":"Red internacional","df.d5.d":"Socios y representantes internacionales para apoyar operaciones desde y hacia diferentes regiones.",
+  "sv.s3.b2":"Operaciones Door-to-Door","sv.s3.b3":"De la cotización al seguimiento",
+  "sv.s4.b2":"Asesoría aduanera","sv.s4.b3":"Orientación documental",
+  "sv.s5.d":"Almacenaje de cargas integrado a su operación logística.","sv.s5.b1":"Almacenaje de cargas","sv.s5.b2":"Integrado a la operación logística",
+  "sv.s6.d":"Transporte terrestre nacional e internacional, conectando la carga con el destino final.","sv.s6.b1":"Transporte terrestre nacional e internacional","sv.s6.b2":"Seguimiento hasta la entrega",
+  "sv.also":"También trabajamos con:","sv.also.l":"consultoría internacional, sourcing internacional, inspección y auditoría de proveedores y operaciones Door-to-Door.",
+  "ft.about":"Comercio exterior y logística integrada desde 2003. Soluciones nacionales e internacionales, del origen al destino."
+});

@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   var CONTACT_EMAIL = "contato@nlgcomex.com.br";
-  var SVC = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", orientacao: "Preciso de orientação" };
+  var SVC = { maritimo: "Frete marítimo", aereo: "Frete aéreo", agenciamento: "Agenciamento de cargas", desembaraco: "Desembaraço aduaneiro", importacao: "Suporte à importação", exportacao: "Suporte à exportação", armazem: "Armazém de cargas", rodoviario: "Transporte rodoviário", orientacao: "Preciso de orientação" };
   var OP = { importacao: "Importação", exportacao: "Exportação" };
   var MSG = { req: "Preencha este campo.", email: "Informe um e-mail válido, por exemplo nome@empresa.com.", sel: "Selecione uma opção." };
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -24,6 +24,8 @@
     chk("#f-svc", function (v) { return v ? "" : "sel"; });
     chk("#f-name", function (v) { return v ? "" : "req"; });
     chk("#f-company", function (v) { return v ? "" : "req"; });
+    chk("#f-op", function (v) { return v ? "" : "sel"; });
+    ["#f-goods", "#f-from", "#f-to", "#f-phone", "#f-msg"].forEach(function (id) { chk(id, function (v) { return v ? "" : "req"; }); });
     chk("#f-email", function (v) { return !v ? "req" : (EMAIL_RE.test(v) ? "" : "email"); });
     return first;
   }
