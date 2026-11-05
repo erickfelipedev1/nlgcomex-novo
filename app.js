@@ -5,8 +5,8 @@
 /* ===== Configuração (dados da empresa) ===== */
 // URL do NLG Tracking. Vazio = o botão leva ao contato e mostra um aviso.
 const TRACKING_URL = "";
-// WhatsApp comercial, só dígitos com DDI+DDD (ex.: "5513999999999"). Vazio = botão oculto.
-const WA_NUMBER = "";
+// WhatsApp comercial, só dígitos com DDI+DDD (ex.: "5513999999999"). Definido em wa.js. Vazio = botão oculto.
+const WA_NUMBER = window.NLG_WA_NUMBER || "";
 const CONTACT_EMAIL = "contato@nlgcomex.com.br";
 
 const $ = (s, r) => (r || document).querySelector(s);
