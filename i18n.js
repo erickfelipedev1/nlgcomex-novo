@@ -182,7 +182,7 @@ es: {
 Object.assign(window.I18N.en, {
   "hero.title":"Strategic solutions in <span class='hl'>foreign trade</span>",
   "hero.text":"Your cargo with punctuality, reliability and safety. From origin to destination.",
-  "hero.badges":"IATA agent · TWIG accredited agent",
+  "hero.badges":"NLG is a member of",
   "nav.certs":"Certifications","nav.client":"NLG Tracking","ft.client":"NLG Tracking",
   "ft.iata":"IATA agent","ft.twig":"TWIG accredited agent",
   "st.d.d":"Your cargo in real time",
@@ -202,7 +202,7 @@ Object.assign(window.I18N.en, {
 Object.assign(window.I18N.es, {
   "hero.title":"Soluciones estratégicas en <span class='hl'>comercio exterior</span>",
   "hero.text":"Su carga con puntualidad, confianza y seguridad. Del origen al destino.",
-  "hero.badges":"Agente IATA · Agente acreditado de TWIG",
+  "hero.badges":"NLG es miembro de",
   "nav.certs":"Certificaciones","nav.client":"NLG Tracking","ft.client":"NLG Tracking",
   "ft.iata":"Agente IATA","ft.twig":"Agente acreditado de TWIG",
   "st.d.d":"Su carga en tiempo real",
